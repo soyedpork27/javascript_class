@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>효과메서드를 활용한 fadein_Out_slide</title>
+
+  <style>
+    *{margin:0px;padding:0px;}
+    ol, ul, li {list-style : none;}
+    a{color : #333; text-decoration : none;}
+    h2, p, dl, dt, dd {padding : 10px;}
+    article h2 {display : none;}
+    article {
+      border : 5px solid #f00;
+      box-sizing : border-box;
+      position : relative;
+      overflow : hidden;
+    }
+    
+    article img {
+      width : 100%;
+      position : absolute;
+    }
+
+    article::after{
+      display : block;
+      content : "";
+      padding-bottom : 28.1%;
+    }
+
+    article a:first-of-type img {z-index : 5;}
+
+    article a:nth-of-type(2) img {z-index : 4;}
+
+    article a:nth-of-type(3) img {z-index : 3;}
+
+    article a:nth-of-type(4) img {z-index : 2;}
+
+    article a:last-of-type img {z-index : 1;}
+
+
+
+    .c_btn{
+      color : #fff;
+      position : absolute;
+      width : 100px;
+      bottom : 3%;
+      left : 50%;
+      transform : translateX(-50%);
+      z-index : 10;
+      display : flex;
+      justify-content : space-around;
+    }
+  </style>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+</head>
+<body>
+  <h2>효과메서드를 활용한 fadein_Out_slide</h2>
+  <p>이미지 5장을 순서대로 겹치게 하여 4초마다 fadein, fadeOut효과 주기</p>
+  <dl>
+    <dt>구현순서</dt>
+    <dd>1. html태그로 이미지 5장을 순서대로 삽입하고, 목록태그를 활용하여 이미지 번호와 일시정지, 플레이버튼 목록을 작성한다.</dd>
+    <dd>2. css를 활용하여 이미지 5장을 position속성으로 겹치게 하고 z-index속성으로 위/아래 순서를 정한다.</dd>
+    <dd>3. jQuery를 사용하여 현재 보이는 이미지 숨기고, 다음 이미지가 보이도록 하며, 해당하는 이미지가 보일 때 페이지 번호를 표시한다.</dd>
+    <dd>4. 일시정지 버튼을 클릭 시 시간함수(setInterval)를 제거하여 슬라이드가 멈추게 하고, 플레이버튼 클릭 시 시간함수(secInterval)를 다시 설정하여 움직이도록 한다.</dd>
+    <dd>5. window 객체의 resize 이벤트를 사용하여 화면의 너비가 조정되면 이미지 크기와 부모요소의 크기도 같이 변하게 하여 반응형 슬라이드를 만든다.</dd>
+  </dl>
+
+
+  <article>
+    <h2>
+      페이드인 페이드 아웃 반응형 슬라이드
+    </h2>
+    <div>
+      <a href="#javascript:void(0);" title="사진 정보 바로가기"><img src="./images/01.jpg" alt=""></a>
+      <a href="#javascript:void(0);" title="사진 정보 바로가기"><img src="./images/02.jpg" alt=""></a>
+      <a href="#javascript:void(0);" title="사진 정보 바로가기"><img src="./images/03.jpg" alt=""></a>
+      <a href="#javascript:void(0);" title="사진 정보 바로가기"><img src="./images/04.jpg" alt=""></a>
+      <a href="#javascript:void(0);" title="사진 정보 바로가기"><img src="./images/05.jpg" alt=""></a>
+    </div>
+    <ul class="c_btn">
+      <li>&nbsp;</li> <!-- 페이지 번호 -->
+      <li><i class="fas fa-pause"></i></li>
+    </ul>
+
+  </article>
+
+
+
+
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+  <script>
+    $(document).ready(function(){
+      
+      // 초기값 생성
+      let n = 0;
+      // 페이지 번호가 나오게 한다
+      $('.c_btn li:first-child').html((n+1)+'/5');
+
+      function fadeInOut(){
+        $('article a img').stop().fadeOut();   // 모든 이미지를 숨긴다
+        if (n==4){
+          n = 0;
+        }
+        else{
+          n++;
+        }
+        $('article a img').eq(n).fadeIn(); // 다음 번호에 맞는 이미지가 나옴
+        $('article .c_btn li').eq(0).html((n+1)+'/5');
+      }
+
+
+
+
+
+      let Timer = setInterval(fadeInOut,3000);
+
+
+      $('article .c_btn li:last-child').click(function(){
+        if ((this).find('i').hasClass('fas fa-pause')==true){
+          clearInterval(Timer);
+          $(this).find('i').attr('class','fa fa-play');
+        }
+        else {
+          Timer = setInterval(fadeInOut,3000);
+          $(this).find('i').attr('class','fas fa-pause');
+        }
+      });
+    });
+    
+    
+    
+    
+
+
+    
+
+
+
+  
+  </script>
+
+  
+</body>
+</html>

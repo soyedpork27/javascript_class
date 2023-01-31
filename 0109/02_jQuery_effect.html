@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>02_jQuery_effect(효과)</title>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+  <style>
+    .box{
+      display : none;
+      border: 5px solid #f00;
+      width : 332px;
+      margin-top : 50px;
+
+
+    }
+
+    .box img{
+      vertical-align : top;
+    }
+
+
+
+
+
+
+
+
+
+
+    .modal_bg {
+      display : none;
+      position : fixed;
+      left : 0;
+      top : 0;
+      background-color : rgba(0,0,0,.8);
+      width : 100vw;
+      height : 100vh;
+      
+    }
+
+    .modal {
+      width : 500px;
+      height : 550px;
+      position : relative;
+      left : 50%;
+      top : 50%;
+      transform : translate(-50%, -50%);
+    }
+
+    .modal > a > img{
+      display : block;
+      width : 500px;
+      height : 500px;
+    }
+
+    .close_btn {
+      width : 500px;
+      height : 50px;
+      background-color : #000;
+      color : #fff;
+      cursor : pointer;
+    }
+  </style>
+
+
+  <script>
+    $(document).ready(function(){
+      let b1 = $('#btn1');
+      let b2 = $('#btn2');
+      let b3 = $('#btn3');
+      let b4 = $('#btn4');
+      let b5 = $('#btn5');
+      let b6 = $('#btn6');
+      let b7 = $('#btn7');
+      let b8 = $('#btn8');
+      let b9 = $('#btn9');
+      let b10 = $('#btn10');
+
+      b1.click(function(){
+        $('.box').show();
+      });
+
+      b2.click(function(){
+        $('.box').hide();
+      });
+
+      b3.click(function(){
+        $('.box').toggle();
+      });
+
+      b4.click(function(){
+        $('.box').slideDown(5000);
+      });
+
+      b5.click(function(){
+        $('.box').slideUp(5000);
+      });
+
+      b6.click(function(){
+        $('.box').slideToggle();
+      });
+
+      b7.click(function(){
+        $('.box').fadeIn();
+      });
+
+      b8.click(function(){
+        $('.box').fadeOut();
+      });
+
+      b9.click(function(){
+        $('.box').fadeToggle();
+      });
+
+      b10.click(function(){
+        $('.box').fadeTo(10000,1);
+      });
+
+
+
+      let close_btn = $('.close_btn');
+      close_btn.click(function(){
+        $('.modal_bg').fadeOut();
+      });
+
+
+      let b11 = $('#btn11');
+      b11.click(function(){
+        $('.modal_bg').fadeIn();
+      });
+
+
+
+
+
+
+    });
+
+
+
+
+
+
+
+
+
+  </script>
+
+
+
+
+
+</head>
+<body>
+  <h2>02_jQuery_effect(효과)</h2>
+  <p>효과(effect)란? 사용자가 지정한 html 요소를 선택하여 숨기거나 나타내기, 페이드 효과, 슬라이드 다운, 업, 애니메이션 기능을 사용하기 위한 메소드들이 있다.</p>
+  <ul>
+    <li>show() - 선택한 요소를 보이게</li>
+    <li>hide() - 선택한 요소 숨김</li>
+    <li>toggle() - 선택한 요소를 숨기거나/나타냄</li>
+    <li>slideDown() - 선택한 요소를 아래로 펼침</li>
+    <li>slideUp() - 선택한 요소를 위로 접음</li>
+    <li>slideToggle() - 선택한 요소를 아래로 펼치거나/위로 접음</li>
+    <li>fadeIn() - 선택한 요소를 서서히 나타냄</li>
+    <li>fadeOut() - 선택한 요소를 서서히 사라지게 함</li>
+    <li>fadeToggle() - 선택한 요소를 서서히 나타내거나/사라지게</li>
+    <li>fadeTo() - 선택한 요소를 지정한 시간만큼 서서히 사라지게</li>
+  </ul>
+
+    <input type="button" value="show();" id="btn1"><br>
+    <input type="button" value="hide();" id="btn2"><br>
+    <input type="button" value="toggle();" id="btn3"><br>
+    <input type="button" value="slideDown();" id="btn4"><br>
+    <input type="button" value="slideUp();" id="btn5"><br>
+    <input type="button" value="slideToggle();" id="btn6"><br>
+    <input type="button" value="fadeIn();" id="btn7"><br>
+    <input type="button" value="fadeOut();" id="btn8"><br>
+    <input type="button" value="fadeToggle();" id="btn9"><br>
+    <input type="button" value="fadeTo();" id="btn10">
+
+
+
+
+    <div class="box"><img src="./images/banner1.jpg" alt="배너"></div>
+
+
+    <p>효과메서드 사용 시 괄호() 안에 시간을 설정하는 값인 'slow','normal(기본값)','fast, 속도와 시간(1/1000=1초) 설정이 가능하다.'</p>
+
+
+
+
+
+
+    <h3>실습예제. '버튼'을 클릭 시 모달 레이어가 뜨고, 닫기 버튼 시 서서히 사라지게 하기</h3>
+    <input type="button" value="이 버튼을 클릭하면 모달 레이어가 뜹니다." id="btn11">
+
+
+
+    <div class="modal_bg">
+      
+      <div class="modal">
+        <a href="javascript:void(0);" title="모달 배너 바로가기">
+          <img src="./images/popup.jpg" alt="모달 이미지">
+        </a>
+        <input type="button" value="닫기" class="close_btn">
+      </div>
+    </div>
+  
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>실습예제 2</title>
+
+  <style>
+
+    div {
+      width : 300px;
+      text-align : center;
+      margin : 15px auto;
+    }
+
+    #picture{
+      width : 300px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>랜덤 객체를 이용한 사진 변경</h2>
+  <div><a href="#none" title="배너 사진"><img src="./img/banner01.jpg" alt="배너 사진" id="picture"></a></div>
+
+  <script>
+    let random_num = Math.random();
+    let int = Math.ceil(random_num*8);
+
+    let int_1;
+    if (int<10){
+      int_1 = '0'+int;
+    }
+    else {
+      int_1 = int;
+    }
+
+    document.getElementById('picture').src=`./img/banner${int_1}.jpg`
+
+
+  </script>
+
+  
+</body>
+</html>

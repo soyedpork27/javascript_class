@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>팝업(popup)</title>
+  <style>
+    *{
+      margin : 0;
+      padding : 0;
+    }
+    div {
+      width : 360px;
+      height : 365px;
+    }
+
+
+    div > p {
+      background-color : #000;
+      line-height : 40px;
+      text-align : center;
+
+    }
+
+    input[type=button]{
+      color : #fff;
+      background : none;
+      width : 100%;
+      height : 100%;
+    }
+
+
+  </style>
+
+</head>
+<body>
+  <div>
+    <a href="#" title="광고이미지"><img src="./images/banner.jpg" alt="광고이미지"></a><!--
+    --><p><input type="button" value="닫기" onclick="window.close()"></p><!-- self도 사용가능 (여기선 this는 안먹힌다.) -->
+  </div>
+</body>
+</html>

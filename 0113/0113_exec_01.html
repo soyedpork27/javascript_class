@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>실습예제</title>
+
+  <style>
+    
+    *{
+      margin : 0 ; padding : 0;
+    }
+    ul, li {
+      list-style : none;
+    }
+    a{
+      color : #333; text-decoration : none;
+    }
+
+    .fa-solid {
+      color : #333;
+    }
+
+    .b_wrap{
+      position : relative;
+      width : 340px;
+      height : 380px;
+      margin : 50px auto;
+      border : 3px solid #333;
+      overflow : hidden;
+    }
+
+
+    .banner {
+      width : 340px;
+      height : 380px;
+      display : flex;
+    }
+
+    .banner img {
+      width : 340px;
+      height : 380px;
+    }
+
+    .c_btn, .fa-solid {
+      position : absolute;
+      bottom : 10px;
+      z-index : 2;
+    }
+
+    .c_btn{
+      left : 50%;
+      transform : translateX(-50%);
+      width : 75px;
+      display : flex;
+      justify-content : space-between;
+    }
+
+    .c_btn li {
+      width : 15px;
+      height : 15px;
+      background-color : #fff;
+      border-radius : 50%;
+      cursor : pointer;
+    }
+    .c_btn li:first-child{
+      background-color : #ff0;
+    }
+
+    .fa-play{
+      right : 30px;
+      font-size : 20px;
+    }
+
+    .fa-stop{
+      right : 12px;
+      font-size : 20px;
+    }
+
+
+
+
+
+  </style>
+
+  <!-- 폰트 어썸 링크 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+
+  <!-- 제이쿼리 라이브러리 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+  <!-- 제이쿼리 UI라이브러리 -->
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+
+  <script>
+
+
+
+    $(document).ready(function(){
+
+      let n = $('.c_btn li').index();
+      let img_w = $('.banner img').width();
+
+      $('.c_btn li').click(function(){
+        n = $(this).index();
+        $('.banner').stop().animate({'margin-left':-n*img_w},500);
+
+        $('.c_btn li').css('background-color','#fff');
+        $(this).css('background-color','#ff0');
+      });
+
+
+
+
+      function autoSlide(n){
+        n = -($('.banner img').width()*n);
+        $('.banner').animate({'margin-left':n},500);
+      }
+
+
+      let Timer = setInterval(function(){
+        if(n==2){
+          n = 0;
+          $('.c_btn li').css('background-color','#fff');
+          $('.c_btn li').eq(n).css('background-color','#ff0');
+        }
+        else{
+          n++
+          $('.c_btn li').css('background-color','#fff');
+          $('.c_btn li').eq(n).css('background-color','#ff0');
+        }
+        autoSlide(n);
+      },3000);
+
+      
+      $('c_btn').hover(function(){
+        clearInterval(Timer);
+
+        },function(){
+        Timer = setInterval(function(){
+        if(n==2){
+          n = 0;
+          $('.c_btn li').css('background-color','#fff');
+          $('.c_btn li').eq(n).css('background-color','#ff0');
+        }
+        else{
+          n++
+          $('.c_btn li').css('background-color','#fff');
+          $('.c_btn li').eq(n).css('background-color','#ff0');
+        }
+        autoSlide(n);
+      },3000);
+
+
+
+
+
+
+      });
+
+
+
+
+
+
+
+
+
+    });
+
+
+
+
+  </script>
+
+
+</head>
+<body>
+  <article class="b_wrap">
+    <ul class="banner">
+      <li><a href="#" title=""><img src="./images/01-1.jpg" alt="슬라이드 배너 이미지"></a></li>
+      <li><a href="#" title=""><img src="./images/02-1.jpg" alt="슬라이드 배너 이미지"></a></li>
+      <li><a href="#" title=""><img src="./images/03-1.jpg" alt="슬라이드 배너 이미지"></a></li>
+    </ul>
+    <ul class="c_btn">
+      <li>&nbsp;</li>
+      <li>&nbsp;</li>
+      <li>&nbsp;</li>
+    </ul>
+    <i class="fa-solid fa-play"></i>
+    <i class="fa-solid fa-stop"></i>
+  </article>
+
+
+  
+</body>
+</html>

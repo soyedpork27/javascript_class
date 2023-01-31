@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jQuery소개와 문법</title>
+<!-- https://oscarotero.com/jquery/ 제이쿼리 도큐먼트 (메서드 참조 사이트) -->
+
+
+
+
+<!-- 
+https://jquery.com/ 제이쿼리 공식 사이트 여기서 제이쿼리 받아서 스크립트 폴더에 넣는다.
+-->
+
+<!-- 1. 직접 다운받은 파일 연결 -->
+<script src="./script/jquery-3.6.3.min.js"></script>
+
+
+<!-- 2, CDN 방식으로 파일 연결 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+<script>
+  // 제이쿼리 문법!
+  $(document).ready(function(){  // html 문서가 로딩이 끝나면 함수 안의 내용을 실행한다.
+
+    // 자바스크립트로 제목 서식 변경하기
+    let h1 = document.getElementById('title');
+    h1.style.color="#f00";
+
+    $('h2').css('color','#00f');
+    $('p').css('background-color','#ccc');
+    $('ol').css('background-color','#ff0');
+
+    /*
+    css() 메서드 사용법
+
+    서식이 1개 일 때
+    .css('속성','값');
+    
+    서식이 여러개 일 때
+    .css('속성1','값').css('속성2','값');    메서드 체이닝 기법
+    .css({'속성1':'값','속성2':'값','속성3':'값'})
+    */
+
+  });
+</script>
+
+</head>
+<body>
+  <h1 id="title">1. 01_제이쿼리소개와문법</h1>
+  <p>제이쿼리란? 자바스크립트의 생산성을 향상시켜주는 라이브러리 언어</p>
+  <p>라이브러리란? 자주 사용하는 코드들을 재사용할 수 있도록 가공하여 코딩의 효율성을 높여주도록 만든 코드들의 집합을 의미한다.</p>
+
+  <h2>2. jQuery의 특징</h2>
+  <ol>
+    <li>엘리먼트(html요소)를 선택하는 강력한 기능을 제공</li>
+    <li>선택된 엘리먼트를 제어할 수 있는 다양한 함수를 제공</li>
+    <li>자바스크립트의 자주 사용하는 기능을 라이브러리로 작성해둔 언어이다.</li>
+  </ol>
+
+  <h2>3. 제이쿼리 라이브러리 연결방법</h2>
+  <ol>
+    <li>jQuery라이브러리 파일을 직접 다운받아 html 문서에 연결</li>
+    <li>CDN(Content Delivery Network) - 서비스를 제공하는 업체로부터 링크 주소를 문서에 연결해 사용</li>
+  </ol>
+
+  <h2>4. 제이쿼리 작성법</h2>
+  <ol>
+    <li>${'대상'}.메소드();</li>
+    <li>jquery('대상').메소드();</li>
+  </ol>
+
+  <h2>5. 제이쿼리에서 '$'' 기호의 의미?</h2>
+  <p>jQuery에서 $의 역할은 괄호 안에 넣을 요소를 선택하는 역할을 한다.</p>
+
+  <h2>6. 제이쿼리에서 $기호 다음에 들어가는 대상은?</h2>
+  <ol>
+    <li>html 태그 : $('body')</li>
+    <li>css 선택자 : $('#id명')</li>
+    <li>javascript 객체 : $(document)</li>
+  </ol>
+
+  <h2>7. 제이쿼리 래퍼(wrapper)</h2>
+  <ol>
+    <li>$(document).ready(function(){실행할 내용;})</li>
+    <li>$(function(){실행할 내용;})</li>
+    <li>jQuery(function(){실행할 내용;})</li>
+    <li>$(function(){실행할 내용;})(jQuery)</li>
+  </ol>
+
+
+
+
+
+
+
+
+</body>
+</html>

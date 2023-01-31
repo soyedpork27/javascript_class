@@ -1,0 +1,142 @@
+@charset "UTF-8";
+
+h2 {
+  font-size: 45px;
+  position : relative;
+  left : 10px;
+  top : 10px;
+  color : #fff;
+}
+
+
+*{
+  margin : 0;
+  padding : 0;
+}
+
+ul, ol, li {
+  list-style : none;
+}
+
+
+
+.wrap {
+  width : 1140px;
+  margin : 40px auto;
+  background-color : #F36F21;
+
+}
+
+.wrap > .g_wrap {
+  display : grid;
+  grid-template-columns : repeat(3, auto);
+  grid-template-rows : repeat(3, auto);
+  gap : 30px;
+  padding : 30px;
+  height : 865px;
+}
+
+.wrap > .g_wrap > li {
+  background-color : #fff;
+  position : relative;
+  overflow : hidden;
+}
+.wrap > .g_wrap > li > a {
+  display : inline-block;
+  width : 100%;
+  height : 100%;
+}
+
+.wrap > .g_wrap > li > a:hover > .box02{
+  bottom : 0;
+}
+
+.org, .bottom .box02 {
+  display : inline-block;
+}
+
+.box02 {
+  height : 90px;
+  width : 100%;
+  background-color : #111;
+  position : absolute;
+  bottom : -90px;
+  left : 0;
+  transition : .4s;
+}
+
+
+.org {
+  font-size : 23px;
+  font-weight : bold;
+  color : #F36F21;
+  margin: 15px 0 0 15px;
+}
+
+
+.bottom, .txt_box {
+  color : #ccc;
+  position : absolute;
+}
+.bottom {
+  bottom : 15px;
+  left : 15px;
+}
+
+.txt_box {
+  right : 15px;
+  bottom : 15px;
+  border : 1px solid #fff;
+  font-size : 70%;
+  font-weight : bold;
+  padding : 4px 5px;
+}
+
+
+
+/* 가로 340px */
+
+.wrap > .g_wrap > li:first-child {
+  background-image : url('../images/mcon5_1.jpg');
+  background-size : 340px 100% ;
+  background-repeat : no-repeat;
+}
+.wrap > .g_wrap > li:nth-child(2) {
+  grid-area : 1/2/3/3;
+  background-image : url('../images/mcon5_4.jpg');
+  background-size : 340px 100%;
+}
+.wrap > .g_wrap > li:nth-child(3) {
+  background-image : url('../images/mcon5_12.png');
+  background-position : center;
+  background-size : contain;
+  background-repeat : no-repeat;
+
+}
+.wrap > .g_wrap > li:nth-child(4) {
+  background-image : url('../images/mcon5_11.png');
+  background-size : 340px 100%;
+}
+
+.wrap > .g_wrap > li:nth-child(5) {
+  background-image : url('../images/mcon5_13.png');
+  background-size : 340px 100%;
+}
+.wrap > .g_wrap > li:nth-child(6) {
+  background-image : url('../images/mcon5_9.jpg');
+  background-size : 340px 100%;
+}
+.wrap > .g_wrap > li:nth-child(7) {
+  background-image : url('../images/mcon5_3.jpg');
+  background-position : center;
+  background-size : contain;
+  background-repeat : no-repeat;
+}
+
+.wrap > .g_wrap > li:last-child {
+  background-image : url('../images/mcon5_2.jpg');
+  background-size : 340px 100%;
+}
+
+
+

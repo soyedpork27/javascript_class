@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>스타벅스 실습예제</title>
+
+  <style>
+    
+    *{margin : 0; padding : 0;}
+
+
+    section {}
+
+    section article {
+      width : 100%;
+    }
+
+    section article:first-child {
+      position : relative;
+    }
+    section article:first-child::after {
+      content : "";
+      display: block;
+      padding-bottom : 36%;
+    }
+
+    section article:first-child img {position : absolute;}
+
+
+    .none {
+      display : none;
+    }
+
+    section article:first-child img:first-child {
+      left : 0; top : 0;
+    }
+
+    section article:first-child img:nth-child(2) {
+      left : 1180px;
+      top : 50px;
+    }
+
+    section article:first-child img:nth-child(3) {
+      left : 1060px;
+      top : 210px;
+    }
+    section article:first-child img:nth-child(4) {
+      left : 1180px;
+      top : 250px;
+    }
+
+    section article:first-child img:nth-child(5) {
+      left : 950px;
+      top : 40px;
+    }
+
+    section article:first-child img:nth-child(6) {
+      left : 840px;
+      top : 200px;
+    }
+
+    section article:first-child img:nth-child(7) {
+      left : 1360px;
+      top : 160px;
+    }
+
+    section article:first-child img:nth-child(8) {
+      left : 1510px;
+      top : 15px;
+    }
+    section article:first-child img:last-child {
+      left : 300px;
+      top : 130px;
+    }
+    #bg {
+      width : 100%;
+    }
+
+
+
+
+
+
+  </style>
+
+</head>
+<body>
+
+  <main>
+    <section>
+      <article>
+        <img src="./images/bev_bg.jpg" alt="배경이미지" id="bg">
+
+
+
+        <img src="./images/bev1_cup.png" alt="홀리데이 밀크 초콜릿" class="none no_1">
+        <img src="./images/bev2_cup.png" alt="레몬 진저 차이 티" class="none no_2">
+        <img src="./images/bev3_cup.png" alt="토피넛 라떼" class="none no_3">
+
+        <img src="./images/bev1_txt.png" alt="1번 음료 설명" class="none no_1">
+        <img src="./images/bev2_txt.png" alt="2번 음료 설명" class="none no_2">
+        <img src="./images/bev3_txt.png" alt="3번 음료 설명" class="none no_3">
+
+
+
+        <img src="./images/badge_main_autumn2.png" alt="뱃지 이미지">
+        <img src="./images/m_18_emblem.png" alt="엠블럼">
+  
+      </article>
+      <article>
+        <p><span class="red_col">빛나는 크리스마스</span>를<br> 스타벅스에서 가장 먼저 만나보세요.</p>
+        <p>기간 : 2018년 10월 26일 ~ 2018년 11월 28일</p>
+      </article>
+    </section>
+  </main>
+  
+
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      for (let i = 1; i < 4 ; i++){
+        $(`.no_${i}`).delay(i*900).fadeIn('slow');
+      }
+    });
+  </script>
+
+
+
+
+
+
+
+  
+</body>
+</html>

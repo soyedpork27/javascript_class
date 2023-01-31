@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>월.일.(요일) 출력하기</title>
+</head>
+<body>
+
+
+
+
+
+
+
+
+  <script>
+
+    function print(a) {
+      document.write(`${a}<br>`);
+    }
+
+    let today = new Date();
+
+    let month = today.getMonth()+1; // 월
+
+    let date = today.getDate(); // 일
+
+    const yoil = today.getDay(); // 요일 (숫자 상태)
+    
+    print(yoil);
+
+
+    //1~9 일때만 date 앞에 '0' 문자를 붙여야
+
+
+
+
+    if (month < 10){
+      month = '0' + month ;
+    }
+    else {
+      month = month ;
+    }
+
+
+    if (date < 10){
+      date = '0' + date ;
+    }
+    else {
+      date = date ;
+    }
+
+    const lis01 = ['일','월','화','수','목','금','토'];
+
+
+    document.write(`${month}.${date}(${lis01[yoil]})`);
+
+
+
+
+
+  </script>
+  
+</body>
+</html>

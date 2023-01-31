@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>움직이는 배너 구현하기</title>
+
+  <style>
+    *{margin : 0; padding : 0;}
+    ul, li, ol {
+      list-style : none;
+    }
+    a {color : #333; text-decoration : none;}
+    h2, p {
+      padding : 10px;
+    }
+    .banner{
+      width : 1200px;
+      margin : 0 auto;
+      border : 3px solid #f00;
+      height : 122px;
+    }
+    .banner > ul {
+      display : flex;
+      margin-left : -355px;
+    }
+    .banner > ul > li {
+
+    }
+    .banner img {
+      vertical-align : 
+    }
+  </style>
+  
+
+  <!-- 폰트어썸 -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  
+<!-- jQuery 라이브러리 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+<script>
+  $(document).ready(function(){
+
+    let m_left = -$('.banner ul img').width();
+    console.log(m_left);
+    let = $('banner ul li:first-child');
+
+    let n = 1
+
+    function moveLeft(){
+      $('.banner ul').css('margin-left',m_left);
+      m_left -=1;
+      console.log(m_left);
+      if(m_left == -355){
+        $('.banner ul li:first-child').insertAfter('.banner ul li:last-child');
+        // $('.banner ul').css('margin-left',m_left);
+      }
+      // else if (m_left == -710){
+      //   m_left = -355;
+      // }
+    }
+
+    let Timer = setInterval(moveLeft,20);
+
+
+
+    moveLeft();
+
+
+
+
+  });
+</script>
+</head>
+<body>
+
+  <h2>jQuery_DOM_image_slide</h2>
+  <p>7장의 이미지를 사용하여 왼쪽으로 슬라이드되는 애니메이션 구현하기</p>
+  <article class="banner">
+    <ul>
+      <li><a href="#none" title=""><img src="./images02/seoul1.jpg" alt="배너 1"></a></li>
+      <li><a href="#none" title=""><img src="./images02/seoul2.jpg" alt="배너 2"></a></li>
+      <li><a href="#none" title=""><img src="./images02/seoul3.jpg" alt="배너 3"></a></li>
+      <li><a href="#none" title=""><img src="./images02/seoul4.jpg" alt="배너 4"></a></li>
+      <li><a href="#none" title=""><img src="./images02/seoul5.jpg" alt="배너 5"></a></li>
+      <li><a href="#none" title=""><img src="./images02/seoul6.png" alt="배너 6"></a></li>
+      <li><a href="#none" title=""><img src="./images02/seoul7.jpg" alt="배너 7"></a></li>
+    </ul>
+  </article>
+  
+</body>
+</html>

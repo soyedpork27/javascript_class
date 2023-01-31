@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>컨트롤 슬라이드</title>
+
+  <!-- <link rel="stylesheet" href="./css/reset.css" type="text/css"> -->
+
+  <style>
+    *{
+      margin : 0 ; padding : 0;
+    }
+    ul, li {
+      list-style : none;
+    }
+    a{
+      color : #333; text-decoration : none;
+    }
+    h2, dl, dt, dd {
+      padding : 10px;
+    }
+    .b_wrap{
+      border : 3px solid #000;
+      width : 250px; height : 200px;
+      background-color : #ff0;
+      margin : 0 auto;
+      overflow : hidden;
+    }
+
+    .banner {
+      display : flex;
+    }
+    .c_btn{
+      display : flex;
+      justify-content : center;
+      transform : translateY(10px);
+      cursor : pointer;
+    }
+    .c_btn > li {
+      width : 15px; height : 15px;
+      border-radius : 50%;
+      background-color : #333;
+      margin : 0px 6px;
+      transition : .3s;
+    }
+
+    .on{
+      background-color : #ccc !important;
+      width :50px !important;
+      border-radius : 20px !important;
+    }
+
+  </style>
+  
+  <!-- 제이쿼리 라이브러리 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+  <!-- 제이쿼리 UI라이브러리 -->
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+
+  <script>
+    $(document).ready(function(){
+
+      // 1. 인덱스 값을 저장하기 위한 변수 선언
+      // index() 메서드
+      let n = $('.c_btn li').index();
+      let img_w = $('.banner img').width();
+
+      console.log(n); // 첫 인덱스값만 나온다.
+
+      // 2. 사용자가 콘트롤 버튼을 클릭 시 해당 인덱스값 구해보기
+
+      $('.c_btn li').click(function(){
+        n = $(this).index();
+        $('.banner').stop().animate({'margin-left':-n*img_w}),1000;
+
+        // 컨트롤 버튼 전체에 색 서식 default 적용
+        // $('.c_btn li').css('background-color','#333');
+
+        // 선택한 컨트롤 버튼에 색 서식 적용
+        // $(this).css('background-color','#ccc');
+
+
+        // $('.c_btn li').attr('class','');
+        // $(this).attr('calss','.on');
+
+        $('.c_btn li').removeClass();
+        $(this).addClass('on');
+      });
+
+
+
+      // let c_btn = document.querySelectorAll('c_btn li');
+      // let Times = setInterval(moveLeft,3000);
+
+      // function moveLeft(){
+        
+      //   let k = n++;
+      //   $('.banner').stop().animate({'margin-left':-k*img_w}),1000;
+
+      //   $('.c_btn li').removeClass();
+      //   $(c_btn[k]).addClass('on');
+
+      }
+
+
+
+
+
+
+
+
+
+
+    });
+  </script>
+
+</head>
+<body>
+  <h2>콘트롤 버튼이 있는 슬라이드 구현</h2>
+  <dl>
+    <dt>구현방법</dt>
+    <dd>1. 배너 박스에 이미지목록을 4개 만들고 가로배치 한다.</dd>
+    <dd>2. 목록태그로 콘트롤 버튼을 만들고 이미지의 아래쪽에 배치한다.</dd>
+    <dd>3. 콘트롤 버튼을 클릭하면 해당 li 태그의 index 값을 구하여 변수에 담는다.</dd>
+    <dd>4. 이미지 목록에 이미지 1장의 너비와 인덱스 값을 곱한 값을 변수에 담는다</dd>
+    <dd>5. 움직이는 너비변수를 이미지 목록 부모요소에 대입하여 animate메소드로 움직이게 한다.</dd>
+  </dl>
+
+  <article class="b_wrap">
+    <ul class="banner">
+      <li><a href="#" title=""><img src="./images/emp-policy-slide2.png" alt=""></a></li>
+      <li><a href="#" title=""><img src="./images/emp-policy-slide3.png" alt=""></a></li>
+      <li><a href="#" title=""><img src="./images/emp-policy-slide4.png" alt=""></a></li>
+      <li><a href="#" title=""><img src="./images/emp-policy-slide5.png" alt=""></a></li>
+    </ul>
+    <ul class="c_btn">
+      <li class="on">&nbsp;</li>
+      <li>&nbsp;</li>
+      <li>&nbsp;</li>
+      <li>&nbsp;</li>
+    </ul>
+  </article>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+</body>
+</html>

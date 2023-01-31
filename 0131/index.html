@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>제이쿼리 문서객체 조작 - scroll layout</title>
+
+  <!-- 레이아웃 서식 -->
+  <link rel="stylesheet" href="./css/scroll_layout.css" type="text/css">
+
+
+  <!-- 폰트어썸 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+  <!-- 제이쿼리 라이브러리  -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+  
+
+  <script>
+
+    $(document).ready(function(){
+
+      let mnu_n = $('.gnb > li');
+      
+
+
+      mnu_n.click(function(){
+
+        let n = $(this).index();
+        console.log(n);
+
+        $('html, body').animate({scrollTop:$('main > section').eq(n).offset().top - 60 },500);
+
+      });
+
+    });
+
+  </script>
+
+</head>
+<body>
+  <!-- 상단 헤더 영역 -->
+  <header>
+    <h1><a href="index.html" title="메인페이지 바로가기">상단 로고</a></h1>
+    <nav>
+      <ul class="gnb">
+        <li><a href="#none" title="home">home</a></li>
+        <li><a href="#none" title="feature">feature</a></li>
+        <li><a href="#none" title="overview">overview</a></li>
+        <li><a href="#none" title="pricing">pricing</a></li>
+        <li><a href="#none" title="team">team</a></li>
+        <li><a href="#none" title="blog">blog</a></li>
+        <li><a href="#none" title="contact">contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- 메인 콘텐츠 영역 -->
+  <main>
+    <section class="sec01"><h2>메인 비쥬얼 콘텐츠</h2></section>
+    <section class="sec02"><h2>features</h2></section>
+    <section class="sec03"><h2>overview</h2></section>
+    <section class="sec04"><h2>pricing</h2></section>
+    <section class="sec05"><h2>team</h2></section>
+    <section class="sec06"><h2>blog</h2></section>
+    <section class="sec07"><h2>contact</h2></section>
+
+  </main>
+
+  <!-- 푸터 영역 -->
+  <footer>
+    <address>CopyRight&copy;2020 000 allrights reserved.</address>
+  </footer>
+  
+</body>
+</html>

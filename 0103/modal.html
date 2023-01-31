@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>모달윈도 만들어보기_전찬혁</title>
+  <style>
+    *{
+      margin : 0; padding : 0;
+    }
+    
+    article {
+      width : 100%;
+      display : flex;
+      justify-content : center;
+      align-items : center;
+    }
+
+    .modal{
+      background-color : #ccc;
+      width : 380px;
+      height : 420px;
+    }
+
+    .modal > img {
+      width : 100%;
+      height : 380px;
+      display : block;
+    }
+
+    .modal > p {
+      height : 40px;
+      text-align : center;
+    }
+
+  </style>
+</head>
+<body>
+
+  <article>
+    <div class="modal">
+      <a href="#none" title="페이지 가기">
+        <img src="./images/banner02.jpg" alt="배너이미지">
+      </a>
+      <p><input type="button" value="닫기" onclick="close()"></p>
+    </div>
+  </article>
+
+
+
+
+  <script>
+    // 버튼 온클릭 호출 함수 close()
+    function close() {
+      const lis01 = document.getElementsByClassName('modal');
+      for(let i = 0; i < lis01.length ; i++){
+        lis01[i].style.display='none';
+      }
+    }
+  </script>
+
+
+
+  
+</body>
+</html>

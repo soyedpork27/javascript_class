@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>01_객체(object)</title>
+
+  <style>
+    .style {
+      color : red;
+      background-color: yellow;
+      font-weight : bold;
+    }
+  </style>
+
+
+</head>
+<body>
+  <h2>오늘 학습할 객체</h2>
+  <p>배열, 날짜, 수학</p>
+
+  <h2>01_객체(object)</h2>
+  <p>자바스크립트는 객체기반의 언어이다. 모든 명령어가 객체로 이루어져 있으며, 크게
+    <br>
+    1. 사용자 정의 객체. <br>
+    2. 내장객체 <br>
+    가 있다.
+  </p>
+
+  <h3>객체(object)란?</h3>
+  <p>1. 키(key)와 value(값)으로 이루어진 속성(property)을 담아놓은 컨테이너 이다.</p>
+  <p>2. 객체에 변수를 선언하면 속성(property)를 사용할 수 있다.</p>
+  <p>3. 객체에 함수를 선언하면 메서드(method)를 사용할 수 있다.</p>
+
+  <script>
+    // 사용자 정의 객체 선언하기
+    let car = new Object();
+    car.type = '현대자동차';
+    car.model = '그랜져';
+    car.color = '흰색';
+
+    // 속성을 출력하기
+    document.write('<p>'+car.type+'</p>');
+    document.write('<p>'+car.model+'</p>');
+    document.write('<p>'+car.color+'</p>');
+    document.write(`<p>나의 자동차 모델은 ${car.type}의 ${car.model}이며, 차량의 색상은 ${car.color}입니다.</p>`);
+    document.write(car);
+
+
+
+    // 객체를 선언하는 두 번째 방법
+    
+    const person = {
+      firstName : '홍',
+      lastName : '길동',
+      age : '23',
+      height : '175'
+    }
+
+    document.write(`<p> 나의 이름은 ${person.firstName+person.lastName}이고 나이는 ${person.age}세 이며, 키는 ${person.height}입니다. </p>`);
+
+
+
+    // let a = person;
+
+    // a.firstName='전';
+
+    // document.write(`<p> ${person.firstName} </p>`);
+
+
+
+    const myPhone = {
+      모델 : 'iPhoneSE3',
+      화면크기 : '4.7형 16:9 비율',
+      해상도 : '1334*750',
+      카메라_화소 : '1200만 화소',
+      색상 : '블랙'
+    }
+
+
+
+    // document.getElementsByClassName('style').style.color='blue';
+
+    document.write(`<p>저의 스마트폰은 <span class='style'>${myPhone.모델}</span>이며 화면크기는 <span class='style'>${myPhone.화면크기}</span>이고, 해상도는 <span class='style'>${myPhone.해상도}</span>이며, 카메라 화소는 <span class='style'>${myPhone.카메라_화소}</span>이고, 색상은 <span class='style'>${myPhone.색상}</span>입니다.  </p>`);
+
+    document.write(`<p>저의 스마트폰은 <span class='style'>${myPhone.모델}</span>이며 화면크기는 <span class='style'>${myPhone.화면크기}</span>이고, 해상도는 <span class='style'>${myPhone.해상도}</span>이며, 카메라 화소는 <span class='style'>${myPhone.카메라_화소}</span>이고, 색상은 <span class='style'>${myPhone.색상}</span>입니다.  </p>`);
+
+
+
+    let a = document.getElementsByClassName('style');
+
+    for (let i = 0 ; a[i] != 'undefined'; i++){
+      a[i].style.color='#333';
+    }
+
+  </script>
+  
+</body>
+</html>

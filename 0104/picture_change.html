@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>자바스크립트 DOM 속성값을 활용한 상품 미리보기 콘텐츠</title>
+
+  <style>
+    ul, ol {
+      list-style : none;
+    }
+    ul{
+      display : flex;
+      padding : 0;
+    }
+    ul > li {
+    }
+    .Thumb {
+      width : 80px; height : 80px;
+      margin : 15px;
+    }
+
+    .on {
+      border : 3px solid #00f;
+      box-sizing : border-box;
+    }
+  </style>
+
+</head>
+<body>
+  <section class="product">
+    <article class="photo">
+      <img src="./images2/photo01.jpg" alt="미리보기" id="big_img">
+      <!-- 썸네일 클릭 시 해당 속성 src 값을 변수에 담아서 출력해본다.-->
+      <ul>
+        <li><img src="./images2/photo01.jpg" alt="썸네일" class="Thumb on"></li>
+        <li><img src="./images2/photo02.jpg" alt="썸네일" class="Thumb"></li>
+        <li><img src="./images2/photo03.jpg" alt="썸네일" class="Thumb"></li>
+        <li><img src="./images2/photo04.jpg" alt="썸네일" class="Thumb"></li>
+        <li><img src="./images2/photo05.jpg" alt="썸네일" class="Thumb"></li>
+      </ul>
+
+    </article>
+    <article>
+      <h3>
+        <span>오늘 마감</span>
+        <p>[최대 40% 쿠폰] 머렐 헤비다운 외 스포츠 특가</p>
+      </h3>
+      <p><span>10%</span> 151,200원~ <a href="#none" title="혜택보기">혜택보기</a></p>
+      <p>
+        <a href="#none" title="적립금">구매 전 적립금 5,000원 받기</a>
+        <a href="#none" title="무이자">카드 무이자 혜택보기(최대 6개월)</a>
+      </p>
+    </article>
+  </section>
+
+
+  <script>
+
+    let a = document.getElementById('big_img');  // 식별자 a 는 큰 이미지 요소(노드)
+
+    const lis01 = document.getElementsByClassName('Thumb');  // 썸네일 태그 클래스로 받아 lis01
+    
+
+
+    for (let i of lis01){                            // of 식별자를 통해 배열 프로퍼티의 값(i)에 바로 접근한다.
+    i.addEventListener('click',function(){    // i 클릭 시 함수를 호출한다
+      
+      a.setAttribute('src',i.getAttribute('src'));   // 큰 이미지의 src 속성을 i의 이미지 속성으로 바꾼다
+    
+      for ( let k = 0 ; k <= lis01.length ; k++ ){    //  반복문을 들여 클래스 서식을 변경
+        lis01[k].setAttribute('class','Thumb');       //  선택 되지 않은 요소(노드)에 클래스 .on 제거
+        i.setAttribute('class','Thumb on');           //  클릭한 요소(노드)에 클래스 .on 추가
+      }
+      });
+    }
+
+
+    // let lisAtr = [];
+    // let j = 0;
+    // for(let i of lis01){
+    //   lisAtr[j] = i.getAttribute('src');
+    //   j++
+    // }
+    // lisAtr = ['./images2/photo01.jpg', './images2/photo02.jpg', './images2/photo03.jpg', './images2/photo04.jpg', './images2/photo05.jpg'];
+    
+</script>
+
+
+
+
+
+
+  
+</body>
+</html>

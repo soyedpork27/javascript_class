@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>함수를 활용하여 적정 체중, 비만도 지수 구하기</title>
+
+  <style>
+    .yellow {
+      background-color : #ff0;
+    }
+    .green {
+      background-color : #0f0;
+    }
+    .blue {
+      background-color : #00f;
+    }
+    .purple{
+      background-color : rgb(255, 0, 212);
+    }
+    .red {
+      background-color : #f00;
+    }
+  </style>
+</head>
+<body>
+  <h2>함수를 활용하여 적정체중_비만도 지수 구하기</h2>
+  <p>자신의 키(신장), 몸무게(체중)를 입력하여 적정체중 구하기</p>
+
+
+  <ol>
+    <li>신장을 입력하기 위한 input박스와 체중을 입력하기 위한 input 사용</li>
+    <li>함수에 신장, 체중값을 사용하여 계산식 작성하기</li>
+    <li>적정체중인지를 비교하여 결과를 출력한다</li>
+
+  </ol>
+  <p>BMI지수 = 몸무게(kg) / (신장(m) * 신장(m))</p>
+
+  <p>BMI 지수가 18.5 이하면 저체중, 18.5 ~ 23은 정상, 23 ~ 25는 과체중, 25 ~ 30은 비만, 30 ~ 35는 고도비만</p>
+  <p>저체중은 배경색 주황색, 정상은 녹색, 과체중은 파랑, 비만은 보라색, 고도비만은 빨강색 배경으로 서식을 지정함.</p>
+
+
+  <form name="bmi지수 구하기" method="get/post" action="a.php">
+    <fieldset>
+      <legend> BMI지수 구하기 </legend>
+      <p>
+        <label for="height">신장 : </label><input type="text" id="height">m
+        예) 170 -> 1.7
+      </p>
+      <p>
+        <label for="height">몸무게 : </label><input type="text" id="weight">kg
+      </p>
+
+      <input type="button" value="결과확인" onclick="calc();">    <!-- onclick 일 때 함수를 호출 -->
+    </fieldset>
+
+    <div id="result">출력결과</div>
+
+  </form>
+
+
+  <script>
+
+    function calc(){
+
+      const height = document.getElementById('height').value;          // id를 선택해 값을 가져와 상수값으로 할당!!!!
+      const weight = document.getElementById('weight').value;
+
+      let sum = parseInt(Number(weight)/(Number(height)*Number(height)));
+
+      
+    if (sum <= 18.5) {
+      document.getElementById('result').innerHTML='<span class="yellow">저체중 입니다.</span>';
+    }
+    else if ((18.5< sum) && (sum <= 23)) {
+      document.getElementById('result').innerHTML='<span class="green">정상 입니다.</span>';
+    }
+    else if ((sum > 23) && (sum <= 25)) {
+      document.getElementById('result').innerHTML='<span class="blue">과체중 입니다.</span>';
+    }
+    else if ((sum > 25) && (sum <= 30)) {
+      document.getElementById('result').innerHTML='<span class="purple">비만 입니다.</span>';
+    }
+    else {
+      document.getElementById('result').innerHTML='<span class="red">고도비만 입니다.</span>';
+    }
+    }
+
+  </script>
+
+</body>
+</html>

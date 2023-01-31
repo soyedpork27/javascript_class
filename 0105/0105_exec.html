@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>자바스크립트로 슬라이드 구현하기</title>
+
+
+  <style>
+    *{
+      margin : 0;
+      padding : 0;
+    }
+    ul, ol, li {
+      list-style : none;
+    }
+
+    #slide_banner {
+      position : relative;
+      height : 450px;
+    }
+
+    #slide_banner li {width : 100%;}
+
+    #slide{
+      display : flex;
+      position : absolute;
+      left : 0;
+      transition : 1s;
+    }
+
+    .button {
+      display : block;
+      width : 40px;
+      height: 40px;
+      line-height : 40px;
+      position : absolute;
+      color : #fff;
+      background-color : #000;
+      text-decoration : none;
+      text-align : center;
+      top : 43%;
+    }
+
+    #left_btn {
+      left : 0;
+    }
+
+    #right_btn {
+      right : 0;
+    }
+
+
+  </style>
+
+
+  <script src="./script/ex.js" defer></script>
+
+</head>
+<body>
+
+  <article id="slide_banner">
+    <ul id="slide">
+      <li><img src="./images/coo1.jpg" alt="슬라이드 이미지"></li>
+      <li><img src="./images/coo2.jpg" alt="슬라이드 이미지"></li>
+      <li><img src="./images/coo3.jpg" alt="슬라이드 이미지"></li>
+      <li><img src="./images/coo4.jpg" alt="슬라이드 이미지"></li>
+      <li><img src="./images/coo5.jpg" alt="슬라이드 이미지"></li>
+    </ul>
+    <a href="#none" title="" class="button " id="left_btn">이전</a>
+    <a href="#none" title="" class="button " id="right_btn">다음</a>
+  </article>
+  
+
+
+</body>
+</html>

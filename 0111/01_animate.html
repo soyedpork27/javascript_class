@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>01_animate</title>
+  <style>
+
+    .circle {
+      width : 100px;height : 100px;
+      border-radius : 50%;
+      margin : 15px;
+      background-color : #333;
+      display : flex;
+      justify-content : center;
+      align-items : center;
+      position : relative;
+    }
+    .circle > div {
+      width : 70px;height : 70px;
+      border-radius : 50%;
+      display : flex;
+      justify-content : center;
+      align-items : center;
+      background-color : #fff;
+
+    }
+    .circle > div > div {
+      width : 30px;height : 30px;
+      border-radius : 50%;
+      background-color : #333;
+
+    }
+
+    #kakao {
+      position : relative;
+    }
+
+
+    .box {
+      content : "";
+      width : 60px;
+      height : 60px; 
+      background-color : rgb(134, 134, 255);
+      margin-bottom : 10px;
+      position : relative;
+    }
+
+
+
+    .bar01, .bar02, .bar03 {
+      background-color : #f00;
+      width : 20px;
+      height : 50px;
+      position : relative;
+      left : 0;
+      margin-bottom : 10px;
+      margin-top :15px;
+    }
+
+
+
+
+
+    ol, ul, li {
+      list-style : none;
+    }
+
+
+    #skill_box {
+      width : 900px;
+      height : 400px;
+      margin-left : 30px;
+      margin-bottom : 30px;
+      border-radius : 30px;
+      background-color : #eee;
+      justify-content:  center;
+      position : relative;
+    }
+
+
+    #skill_box > ul {
+      width : 90%;
+      height : 300px;
+      font-weight : bold;
+      transform : translateY(50px);
+    }
+
+    #skill_box > ul > li {
+      position : relative;
+      height : 35px;
+      margin-top : 40px;
+      line-height : 35px;
+      display : flex;
+    }
+
+    #skill_box > ul > li > div {
+      position : absolute;
+      left : 60px;
+      height : 100%;
+      border-radius : 10px;
+      background-color : #ccc;
+      width : 500px;
+      display : inline-block;
+    }
+
+    #skill_box > ul > li > div > div {
+      height : 100%;
+      border-radius : 10px;
+      background-color : rgb(255, 43, 43);
+    }
+    
+
+    #skill_btn01 {
+      border : none;
+      width : 250px;
+      height : 40px;
+      line-height : 40px;
+      text-align : center;
+      cursor : pointer;
+      background-color : #000;
+      color : #fff;
+      font-size : 18px;
+      position : absolute;
+      right : 15px;
+      bottom : 70px;
+      border-radius : 5px;
+    }
+
+    #skill_btn02 {
+      border : none;
+      width : 250px;
+      height : 40px;
+      line-height : 40px;
+      text-align : center;
+      cursor : pointer;
+      background-color : #000;
+      color : #fff;
+      font-size : 18px;
+      position : absolute;
+      right : 15px;
+      bottom : 15px;
+      border-radius : 5px;
+    }
+    
+
+
+  </style>
+
+
+  <!-- jQuery 라이브러리 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+
+
+  <!-- jQuery UI 라이브러리 -->
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+
+  <script>
+
+    $(function() {
+
+
+
+      $('#btn01').click(function(){
+      $('.circle').animate({'left' : '400px'},3000).animate({'left' : '0'},4000);
+      });
+
+
+      $('#btn02').click(function(){
+      $('.circle').stop();
+      });
+
+
+      $('#btn03').click(function(){
+      $('.circle').stop().animate({'left':'0'},1500);
+      });
+
+
+
+
+      let n =50; // 초기값
+      $('#l_btn').click(function(){
+        $('#kakao').animate({'left':'-='+n},500);
+      });
+
+
+      $('#r_btn').click(function(){
+        $('#kakao').animate({'left':'+='+n},500);
+      });
+
+
+
+      $('#t_btn').click(function(){
+        $('#kakao').animate({'top':'-='+n},500);
+      });
+
+      $('#b_btn').click(function(){
+        $('#kakao').animate({'top':'+='+n},500);
+      });
+
+
+
+
+
+
+
+      $('.box').mouseenter(function(){
+        $(this).animate({'left':'800px'},600);
+      });
+
+      $('.box').mouseleave(function(){
+        $(this).animate({'left':'0'},600);
+      });
+
+
+      $('#btn04').click(function(){
+        $('.bar01').animate({'width':'500px'}, 1500, 'easeOutQuint');
+      });
+
+
+      $('#btn05').click(function(){
+        $('.bar02').animate({'width':'900px'}, 1500, 'easeOutElastic');
+      });
+
+      $('#btn06').click(function(){
+        $('.bar03').animate({'width':'700px'}, 1500, 'easeInBounce');
+      });
+
+
+
+
+        $('#html_skill').css('width','0');
+        $('#css_skill').css('width','0');
+        $('#js_skill').css('width','0');
+        $('#UI_skill').css('width','0');
+        $('#skill_box span').css('color','#eee');
+
+
+      $('#skill_btn01').click(function(){
+        $('#html_skill').stop().animate({'width':'40%'},2000, 'easeInQuint');
+        $('#css_skill').stop().animate({'width':'40%'},2000, 'easeInQuint');
+        $('#js_skill').stop().animate({'width':'70%'},2000, 'easeInQuint');
+        $('#UI_skill').stop().animate({'width':'0%'},2000, 'easeInQuint');
+        $('#skill_box span').stop().animate({'color':'#000'},5000);
+
+      });
+
+
+      $('#skill_btn02').click(function(){
+        $('#html_skill').stop().animate({'width':'0'},2000, 'easeOutQuint');
+        $('#css_skill').stop().animate({'width':'0'},2000, 'easeOutQuint');
+        $('#js_skill').stop().animate({'width':'0'},2000, 'easeOutQuint');
+        $('#UI_skill').stop().animate({'width':'0'},2000, 'easeOutQuint');
+        $('#skill_box span').stop().animate({'color':'#eee'},5000);
+
+      });
+
+
+
+
+    });
+
+
+
+    
+
+
+  </script>
+
+
+
+</head>
+<body>
+
+  <h2>제이쿼리_01_animate메서드</h2>
+  <p>제이쿼리에서는 효과와 애니메이트 메소드를 사용하여 사용자가 선택한 요소를 다양하게 움직이도록 할 수 있다.</p>
+  <h3>1. animate 메소드 작성법</h3>
+  <p>$('대상').animate( { '속성' : '값' }, 시간, 가속도, 콜백함수 );</p>
+  <p>{ '속성' : '값' } - css 속성과 값을 말하며, '값'에는 자바스크립트 변수나 연산자를 사용할 수 있다.</p>
+  <p>시간 - 애니메이션이 동작하는 시간을 말하며 1/1000초 = 1초를 나타냄</p>
+  <p>가속도 - easing메소드를 활용한 값을 말함 (이미지 참조)</p>
+  <p>콜백함수 - callback function 으로 애니메이션 동작이 끝나면 다음 동작을 이어 실행하고자 할 때 사용.</p>
+
+
+
+
+
+  <h3>2. animate 메소드를 사용하여 '원' 움직이게 하기</h3>
+
+  <div class="circle"><div> <div></div></div></div>
+
+  <input type="button" value="play" id="btn01">
+  <input type="button" value="stop" id="btn02">
+  <input type="button" value="reset" id="btn03">
+
+
+  <br><br><br><br>
+
+
+  <h3>3. 자바스크립트 절대값을 활용하여 캐릭터 위치 조정하기</h3>
+
+  <img src="./images/6066319.jpg" alt="무지 사진" id="kakao">
+  <br>
+  <br><br><br><br><br>
+
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" value="&#x2191;" id="t_btn"> <br>
+  <input type="button" value="&#x2190;" id="l_btn">
+  <input type="button" value="&#x2193;" id="b_btn">
+  <input type="button" value="&#x2192;" id="r_btn">
+
+
+
+
+
+  <br><br><br><br>
+
+
+  <h3>4. box에 마우스 오버시 애니메이션 연속 동작하게 하기</h3>
+  <br><br><br>
+
+  <div class="box"></div>
+  <div class="box"></div>
+  <div class="box"></div>
+  <div class="box"></div>
+  <div class="box"></div>
+
+
+
+
+
+
+
+
+  <br><br><br><br><br><br>
+  <h3>5. 제이쿼리 UI 라이브러리를 사용하여 속도감(easing) 주기</h3>
+  <p>jQuery.com 사이트의 왼쪽 상단의 ui탭을 클릭하고 왼쪽 easing 메뉴에서 jQuery.ui 라이브러리를 찾아 연결하여 사용한다.</p>
+  <br><br><br>
+
+
+  <img src="./images/easing.png" alt="속도감 주기">
+  <div class="bar01"></div>
+  <input type="button" value="easyOutQuint" id="btn04">
+
+  <div class="bar02"></div>
+  <input type="button" value="easyOutElastic" id="btn05">
+
+  <div class="bar03"></div>
+  <input type="button" value="easyInBounce" id="btn06">
+
+
+
+
+
+
+
+
+
+  <br><br><br><br><br>
+  <h3>6. 실습 - 자신의 능력치 표현하기 (html, css, javascript/jQuery, UI/UX design</h3>
+
+  <div id="skill_box">
+    <ul>
+      <li>html <div>
+        <div id="html_skill"></div><span>&nbsp;&nbsp;40%</span>
+      </div></li>
+
+      <li>css <div>
+        <div id="css_skill"></div><span>&nbsp;&nbsp;40%</span>
+      </div></li>
+
+      <li>js,jQ <div>
+        <div id="js_skill"></div><span>&nbsp;&nbsp;70%</span>
+      </div></li>
+
+      <li>UI/UX <div>
+        <div id="UI_skill"></div><span>&nbsp;&nbsp;0%</span>
+      </div></li>
+    </ul>
+    <input type="button" value="실력 알아보기" id="skill_btn01">
+    <input type="button" value="실력 숨기기" id="skill_btn02">
+
+  </div>
+
+
+
+
+
+
+
+
+</body>
+</html>

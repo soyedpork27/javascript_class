@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>네이버 영화 갤러리</title>
+
+  <!-- css 외부 서식 -->
+  <link rel="stylesheet" href="./css/movie_gallery.css" type="text/css">
+
+  <!-- 폰트어썸 연결 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+  <!-- 스크립트 외부 문서 연결 -->
+  <script src="./script/movie_gallery.js" defer></script>  
+</head>
+<body>
+  <h2>네이버 영화 갤러리</h2>
+  <section class="gallery">      <!-- 갤러리 박스 (최상위 부모) -->
+
+    <article>    <!-- 첫 번째 article 작은 이미지 슬라이드 영역 -->
+      <ul class="lnb">
+        <li><img src="./images/movie_image1.jpg" alt="서브 이미지" class="sub_img"></li>
+        <li><img src="./images/movie_image2.jpg" alt="서브 이미지" class="sub_img"></li>
+        <li><img src="./images/movie_image3.jpg" alt="서브 이미지" class="sub_img"></li>
+        <li><img src="./images/movie_image4.jpg" alt="서브 이미지" class="sub_img"></li>
+        <li><img src="./images/movie_image5.jpg" alt="서브 이미지" class="sub_img"></li>
+        <li><img src="./images/movie_image6.jpg" alt="서브 이미지" class="sub_img"></li>
+        <li><img src="./images/movie_image7.jpg" alt="서브 이미지" class="sub_img"></li>
+        <li><img src="./images/movie_image8.jpg" alt="서브 이미지" class="sub_img"></li>
+        <li><img src="./images/movie_image9.jpg" alt="서브 이미지" class="sub_img"></li>
+        <li><img src="./images/movie_image10.jpg" alt="서브 이미지" class="sub_img"></li>
+        <li><img src="./images/movie_image11.jpg" alt="서브 이미지" class="sub_img"></li>
+        <li><img src="./images/movie_image12.jpg" alt="서브 이미지" class="sub_img"></li>
+        <li><img src="./images/movie_image13.jpg" alt="서브 이미지" class="sub_img"></li>
+        <li><img src="./images/movie_image14.jpg" alt="서브 이미지" class="sub_img"></li>
+        <li><img src="./images/movie_image15.jpg" alt="서브 이미지" class="sub_img"></li>
+        <li><img src="./images/movie_image16.jpg" alt="서브 이미지" class="sub_img"></li>
+      </ul>
+    </article>
+
+    <article id="big_img">    <!-- 두 번째 article 큰 이미지 영역, 좌우버튼 포함 -->
+      <img src="./images/movie_image1.jpg" alt="메인 이미지" id="photo">
+
+      <i class="fas fa-angle-left"></i>   <!-- 왼쪽 버튼 폰트어썸 -->
+      <i class="fas fa-angle-right"></i>  <!-- 오른쪽 버튼 폰트어썸 -->
+
+      <span id="page">&nbsp;</span>       <!-- 페이지 번호 나타낼 영역 -->
+    </article>
+
+  </section>
+
+
+
+
+
+
+
+  <!-- 설명 -->
+
+
+
+
+  <ul>
+    <li>1. 변수를 만들어 1로 초기값을 넣어준다.</li>
+    <li>2. #page요소에 '1/16'이 출력되도록 한다.</li>
+    <li>3. 갤러리의 썸네일 이미지를 클릭 시 해당 이미지 번호를 구한다. (배열 인덱스 번호를 가져오기) indexof 사용하기</li>
+  </ul>
+
+  <pre>
+    * forEach() 메서드(만들어져 있는 함수)는 배열 전용 함수이다.
+
+
+    * 문법
+
+        배열객체.forEach((매개변수, index)){
+        실행 할 함수 내용을 적는다.
+        }
+    
+  </pre>
+
+
+
+
+  <ul>
+    <li>1. 전역 변수 n 을 만들어 1로 초기값을 설정</li>
+    <li>2. 갤러리의 썸네일 이미지를 클릭 시 해당 이미지 번호를 구한다.(배열번호)</li>
+    <li>3. #page요소에 'n/16'이 출력되도록 한다.</li>
+    <li>4. #big_img요소의 이미지 파일명 뒤 번호에 n을 대입하여 변경하도록 한다.</li>
+    <li>5. 좌, 우 버튼을 클릭시 각각 if 함수로 숫자를 증가, 감소하여 이미지 파일명 뒤 번호에 n 을 대입하여 변경하도록 한다.</li>
+
+
+  </ul>
+
+
+
+
+</body>
+</html>

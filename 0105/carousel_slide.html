@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>캐러셀 carousel_slide</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+
+  <style>
+    .slide-wrapper *{
+      margin : 0;
+      padding : 0;
+    }
+
+    ul, ol, li {
+      list-style : none;
+    }
+    a{
+      text-decoration : none;
+      color : #333;
+    }
+    .slide-wrapper {
+      width : 960px;
+      height : 300px;
+      margin : 0 auto;
+      border : 3px solid #000;
+      position : relative;
+    }
+
+
+
+    i.btn{
+      position : absolute;
+      top : 44%;
+      background-color : #333;
+      color : #fff;
+      width : 40px;
+      height : 40px;
+      text-align : center;
+      line-height : 40px;
+      font-size : 16px;
+      z-index : 9999;
+    }
+
+    i.btn > a{
+      color : #fff;
+      display : block;
+    }
+
+    i.btn-left {left : 0;}
+    i.btn-right {right : 0;}
+
+    .slide {
+      width : 1620px;
+      display : flex;
+      position : relative;
+      transition : 1s;
+      left : 0;
+      /* justify-content : space-between; */
+    }
+    .slide > li{
+      width : 300px; height : 300px;
+      background-color : #ff0;
+
+    }
+    .slide > li:not(:last-child){
+      margin-right : 30px;
+    }
+
+
+
+  </style>
+
+  <script src="./script/carousel.js" defer></script>
+
+</head>
+<body>
+  <h2>캐러셀(carousle) 슬라이드</h2>
+  <p></p>
+
+
+
+
+  <article class="slide-wrapper">
+    <i class="btn bnt-left"><a href="#none" title="이전" id="prev_btn" class="button">이전</a></i>
+    <i class="btn btn-right"><a href="javascript:void(0);" title="다음" id="next_btn" class="button">다음</a></i>
+    <ul class="slide">
+
+      <li>
+        <div>1</div>
+      </li>
+      <li>
+        <div>2</div>
+      </li>
+      <li>
+        <div>3</div>
+      </li>
+      <li>
+        <div>4</div>
+      </li>
+      <li>
+        <div>5</div>
+      </li>
+    </ul>
+
+
+
+  </article>
+  
+</body>
+</html>

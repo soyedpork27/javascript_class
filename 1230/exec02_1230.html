@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>뉴스 버튼 클릭 시 상세 박스 나오게 하기</title>
+  <style>
+    *{
+      margin : 0; padding : 0;
+    }
+
+    a {
+      text-decoration : none;
+      color : #333;
+      font-weight : 600;
+    }
+
+    #item{
+      width : 300px;
+      padding : 5px;
+      margin : 0 auto;
+    }
+    #news_header {
+      padding-bottom : 10px;
+      border-bottom : 1px solid #ccc;
+      display : flex;
+      align-items : flex-end;
+      height : 40px;
+    }
+    #news_header > h3 {
+      margin-right : 5px;
+    }
+
+    #news_header > a {
+      display : inline-block;
+      margin : 5px;
+    }
+    
+    
+    .detail ul {
+      list-style : none;
+      width : 300px;
+    }
+
+    .detail > ul > li {
+      margin : 5px 0;
+      width : 300px;
+      overflow : hidden;
+      text-overflow : ellipsis;
+      white-space : nowrap;
+    }
+    
+    .detail > ul > li > span{
+      /* display : inline-block; */
+      color : #4664E6;
+      font-size : 1.1rem;
+      font-weight : bold;
+      margin-right : 6px;
+    }
+    
+  </style>
+</head>
+<body>
+  <div id="item">
+    <div id="news_header">
+      <h3>많이 본 뉴스</h3>
+      <a href="#a01" id="a01">MBC</a>
+      <a href="#a02" id="a02">포털</a>
+      <a href="#a03" id="a03">SNS</a>
+      <a href="#a04" id="a04">유튜브</a>
+    </div>
+
+    <div id="desc" class="detail">
+      <ul class="list">
+        <li><span>1.</span><a href="#" title="유튜브1-1">오늘 새벽 또 무인기 소동‥굉음에 놀라 '깜짝'</a></li>
+        <li><span>2.</span><a href="#" title="유튜브1-2">[단독] 운동선수·유흥업소 '선수'까지 뇌전증 연기</a></li>
+        <li><span>3.</span><a href="#" title="유튜브1-3">잿더미 된 차량 그대로‥이 시각 갈현고가교</a></li>
+        <li><span>4.</span><a href="#" title="유튜브1-4">"차 두고 뛰쳐나와" 순식간에 번진 불길에 '필사의 탈출'</a></li>
+        <li><span>5.</span><a href="#" title="유튜브1-5">윤 대통령 "우월한 전쟁 준비해야" vs 野 "'안보'는 전쟁 안나게 하는 것"</a></li>
+        <li><span>6.</span><a href="#" title="유튜브1-6">'연쇄 살인범' 신상 공개‥31살 이기영</a></li>
+        <li><span>7.</span><a href="#" title="유튜브1-7">[단독] 빌라왕 뒤의 빌라왕‥끝은 어디인가?</a></li>
+        <li><span>8.</span><a href="#" title="유튜브1-8">플라스틱 방화벽 타고 빠르게 확산</a></li>
+        <li><span>9.</span><a href="#" title="유튜브1-9">러, 또 대규모 공습‥벨라루스 "미사일 격추"</a></li>
+        <li><span>10.</span><a href="#" title="유튜브1-10">미국서 한국산 전기차도 '리스 차량'은 보조금</a></li>
+      </ul>
+      
+
+      <ul class="list">
+        <li><span>1.</span><a href="#" title="SNS1-1">오늘 새벽 또 무인기 소동‥굉음에 놀라 '깜짝'</a></li>
+        <li><span>2.</span><a href="#" title="SNS1-2">[단독] 운동선수·유흥업소 '선수'까지 뇌전증 연기</a></li>
+        <li><span>3.</span><a href="#" title="SNS1-3">잿더미 된 차량 그대로‥이 시각 갈현고가교</a></li>
+        <li><span>4.</span><a href="#" title="SNS1-4">"차 두고 뛰쳐나와" 순식간에 번진 불길에 '필사의 탈출'</a></li>
+        <li><span>5.</span><a href="#" title="SNS1-5">윤 대통령 "우월한 전쟁 준비해야" vs 野 "'안보'는 전쟁 안나게 하는 것"</a></li>
+        <li><span>6.</span><a href="#" title="SNS1-6">'연쇄 살인범' 신상 공개‥31살 이기영</a></li>
+        <li><span>7.</span><a href="#" title="SNS1-7">[단독] 빌라왕 뒤의 빌라왕‥끝은 어디인가?</a></li>
+        <li><span>8.</span><a href="#" title="SNS1-8">플라스틱 방화벽 타고 빠르게 확산</a></li>
+        <li><span>9.</span><a href="#" title="SNS1-9">러, 또 대규모 공습‥벨라루스 "미사일 격추"</a></li>
+        <li><span>10.</span><a href="#" title="유튜브1-10">미국서 한국산 전기차도 '리스 차량'은 보조금</a></li>
+      </ul>
+
+
+
+      <ul class="list">
+        <li><span>1.</span><a href="#" title="유튜브1-1">오늘 새벽 또 무인기 소동‥굉음에 놀라 '깜짝'</a></li>
+        <li><span>2.</span><a href="#" title="유튜브1-2">[단독] 운동선수·유흥업소 '선수'까지 뇌전증 연기</a></li>
+        <li><span>3.</span><a href="#" title="유튜브1-3">잿더미 된 차량 그대로‥이 시각 갈현고가교</a></li>
+        <li><span>4.</span><a href="#" title="유튜브1-4">"차 두고 뛰쳐나와" 순식간에 번진 불길에 '필사의 탈출'</a></li>
+        <li><span>5.</span><a href="#" title="유튜브1-5">윤 대통령 "우월한 전쟁 준비해야" vs 野 "'안보'는 전쟁 안나게 하는 것"</a></li>
+        <li><span>6.</span><a href="#" title="유튜브1-6">'연쇄 살인범' 신상 공개‥31살 이기영</a></li>
+        <li><span>7.</span><a href="#" title="유튜브1-7">[단독] 빌라왕 뒤의 빌라왕‥끝은 어디인가?</a></li>
+        <li><span>8.</span><a href="#" title="유튜브1-8">플라스틱 방화벽 타고 빠르게 확산</a></li>
+        <li><span>9.</span><a href="#" title="유튜브1-9">러, 또 대규모 공습‥벨라루스 "미사일 격추"</a></li>
+        <li><span>10.</span><a href="#" title="유튜브1-10">미국서 한국산 전기차도 '리스 차량'은 보조금</a></li>
+      </ul>
+
+
+
+      <ul class="list">
+        <li><span>1.</span><a href="#" title="유튜브1-1">오늘 새벽 또 무인기 소동‥굉음에 놀라 '깜짝'</a></li>
+        <li><span>2.</span><a href="#" title="유튜브1-2">[단독] 운동선수·유흥업소 '선수'까지 뇌전증 연기</a></li>
+        <li><span>3.</span><a href="#" title="유튜브1-3">잿더미 된 차량 그대로‥이 시각 갈현고가교</a></li>
+        <li><span>4.</span><a href="#" title="유튜브1-4">"차 두고 뛰쳐나와" 순식간에 번진 불길에 '필사의 탈출'</a></li>
+        <li><span>5.</span><a href="#" title="유튜브1-5">윤 대통령 "우월한 전쟁 준비해야" vs 野 "'안보'는 전쟁 안나게 하는 것"</a></li>
+        <li><span>6.</span><a href="#" title="유튜브1-6">'연쇄 살인범' 신상 공개‥31살 이기영</a></li>
+        <li><span>7.</span><a href="#" title="유튜브1-7">[단독] 빌라왕 뒤의 빌라왕‥끝은 어디인가?</a></li>
+      </ul>
+
+    </div>
+
+  </div>
+
+
+
+
+
+  <script>
+
+    const list = document.querySelectorAll('.list')
+
+    console.log(list);
+
+    for (let a=0 ; a < 5 ; a++)
+    list[a].addEventListener('click', function(){
+      list[a]
+    })
+
+
+
+  </script>
+
+  
+</body>
+</html>

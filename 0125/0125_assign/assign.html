@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>실습과제-쿠팡 배너 manipulate</title>
+
+    <!-- 제이쿼리 라이브러리 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+  <style>
+
+    *{margin : 0; padding : 0;}
+
+    img {
+      display : block;
+    }
+
+    ul, ol, li {
+      list-style : none;
+    }
+
+    .banner{
+      position : relative;
+      border : 3px solid #000;
+      width : 100%;
+      height : 450px;
+      margin-top : 150px;
+    }
+
+    .items {
+      position : absolute;
+      width : 185px;
+      left : 75%;
+      top : 50%;
+      transform : translateY(-50%);
+    }
+
+    .items li {
+      border : 3px solid #ccc;
+    }
+
+
+    li.on {
+      border : 3px solid #00f;
+    }
+
+  </style>
+
+  <script>
+    $(document).ready(function(){
+
+      // li 태그들을 상수에 할당
+      const li_list01 = $('.items li');
+
+      // 시간 객체를 생성(3초 마다 이미지 변경 함수 호출)
+      let Timer = setInterval(imgChange,3000);
+
+      // n 초기값은 0 : 인덱스 번호와 맞추기 위해
+      let n = 0;
+
+      
+      // --------------- a요소 마우스 엔터 이벤트 함수 시작 -----------------------
+
+      // 작은 이미지의 a 태그에 마우스 엔터 했을 때
+      $('.items li a').mouseenter(function(){
+
+
+        // 배너 이미지의 src 속성값을 a(엔터 된 요소)의 href 속성으로 담는다
+        $('.banner_img').attr('src',this.href);
+
+        // 마우스 엔터 시 자동 이미지 변화를 없애기 위해 시간 객체 제거
+        clearInterval(Timer);
+
+        // li 태그에서 클래스 속성 값 제거
+        $('.items li').removeClass();
+
+        // a(엔터 된 요소)의 부모에 class on 추가 (.on 클래스에 서식 적용됨!)
+        $(this).parent().attr('class','on');
+
+        // (!!중요!!) 인덱스 번호에 맞춘 변수 n을 a(마우스 오버 한 요소)의 부모의 인덱스 번호로 할당
+        n = $(this).parent().index();
+
+      });
+
+      
+
+
+            // ㅅㅅㅅㅅㅅㅅㅅㅅㅅㅅㅅㅅㅅㅅㅅㅅㅅㅅ a요소 마우스 엔터 이벤트 함수 끝 ㅅㅅㅅㅅㅅㅅㅅㅅㅅㅅㅅㅅㅅㅅㅅㅅㅅㅅ
+
+
+
+
+
+
+      // -------------------- li 요소들으로부터 마우스 아웃 이벤트 함수 시작 ---------------------
+
+      // 변수로 담아둔 li 요소들에서 마우스 아웃 시
+      $(li_list01).mouseleave(function(){
+
+        // 시간 객체 제거 (시간 객체를 제거하지 않으면 시간 객체 부활 시 중복 적용된다)
+        clearInterval(Timer);
+
+        // 시간 객체 생성
+        Timer = setInterval(imgChange,3000);
+      });
+
+
+
+      // ㅅㅅㅅㅅㅅㅅㅅㅅㅅㅅㅅㅅㅅㅅㅅ li 요소들으로부터 마우스 아웃 이벤트 함수 끝 ㅅㅅㅅㅅㅅㅅㅅㅅㅅㅅㅅㅅㅅㅅㅅㅅㅅㅅㅅ
+
+
+
+
+
+
+
+
+      // -------------------- 자동 이미지 변경 함수 작성 시작 --------------------------------------
+
+      function imgChange(){
+
+        // n 값 콘솔창에서 확인
+        console.log(n);
+
+        // --------------------------- 조건문 시작 ------------------------------
+
+        // n 이 5(인덱스 최대 번호)라면
+        if (n==5) {
+
+          // n을 0으로 할당
+          n=0;
+        }
+
+        // 그렇지 않다면
+        else{
+
+          // n에 1 추가
+          n++;
+        }
+
+        // ㅅㅅㅅㅅㅅㅅㅅㅅㅅㅅㅅㅅㅅㅅㅅㅅㅅㅅ 조건문 끝 ㅅㅅㅅㅅㅅㅅㅅㅅㅅㅅㅅㅅㅅㅅㅅㅅㅅㅅ
+
+
+
+        // li 태그들에서 클래스 속성 값 제거
+        $('.items li').removeClass();
+
+        // li 태그들 중 n 번째 요소를 선택해 클래스 속성 값 on 할당 (.on에 서식 적용됨!)
+        li_list01.eq(n).attr('class','on');
+
+        // li 태그들 중 on 클래스인 요소(선택 된 요소) 의 a 태그의 href 속성을 변수에 할당
+        const onHref = $('li.on a').attr('href');
+
+        // 배너이미지의 src 속성에 선택 된 요소의 href 속성값을 할당
+        $('.banner_img').attr('src',onHref);
+
+      }
+
+    });
+
+
+
+
+  </script>
+
+</head>
+<body>
+  <article class="banner">
+    <a href="#none" title="">
+      <img src="./images/banner01.jpg" alt="" class="banner_img">
+    </a>
+    <nav class="items">
+      <ul>
+        <li class="on"><a href="./images/banner01.jpg" title=""><img src="./images/item01.jpg" alt=""></a></li>
+        <li><a href="./images/banner02.jpg" title=""><img src="./images/item02.jpg" alt=""></a></li>
+        <li><a href="./images/banner03.jpg" title=""><img src="./images/item03.png" alt=""></a></li>
+        <li><a href="./images/banner04.jpg" title=""><img src="./images/item04.jfif" alt=""></a></li>
+        <li><a href="./images/banner05.png" title=""><img src="./images/item05.png" alt=""></a></li>
+        <li><a href="./images/banner06.jpg" title=""><img src="./images/item06.png" alt=""></a></li>
+      </ul>
+    </nav>
+
+
+
+  </article>
+  
+</body>
+</html>

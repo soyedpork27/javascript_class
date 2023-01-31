@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>03_
+    03_내장객체 - 날짜, 시간 객체
+  </title>
+</head>
+<body>
+  <h2>
+    03 내장객체_날짜객체
+  </h2>
+
+
+
+
+  <h3>실시간 디지털 시계 표시하기</h3>
+
+  <p>글자색 : 파랑색, 크기 : 30px, 배경색 : 노랑</p>
+  <div id="clock"></div>
+
+
+
+
+
+  <h3>날짜객체를 활용한 오늘의 추천요리 표시하기</h3>
+  <div id="food"></div>
+
+
+
+
+
+
+
+
+  <script>
+        let today = new Date();
+
+        let f_day =Number(today.getDay());
+
+        let yoil3 = ['(일)','(월)','(화)','(수)','(목)','(금)','(토)'];
+
+
+        let f_day2 = f_day+1;
+
+        document.getElementById('food').innerHTML=`${yoil3[f_day]}요일 추천 메뉴<br><img src="./img2/food${f_day2}.jpg" alt="음식사진">`;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    function clock(){
+
+      let today1 = new Date();
+
+
+      let h1 = today1.getHours();   // 시간
+      let m1 = today1.getMinutes(); // 분
+      let s1 = today1.getSeconds(); // 초
+
+
+      // document.write(h1+'<br>');
+      // document.write(m1+'<br>');
+      // document.write(s1+'<br>');
+
+
+      // 시, 분, 초 앞에 '0' 문자열 붙이기
+      h1 = checkTime(h1);
+      m1 = checkTime(m1);
+      s1 = checkTime(s1);
+
+
+
+      //시, 분, 초 출력하기
+      document.getElementById('clock').innerHTML=h1+':'+m1+':'+s1;
+
+      let t = setTimeout(clock,500);
+      //시간 메서드를 사용하여 clock함수를 매 0.5초 마다 호출한다.
+    }
+
+
+    function checkTime(i){
+      if (i<10){
+        i = '0'+ i;
+      }
+      return i;
+    }
+
+    document.write('<br>');
+    document.write('<br>');
+    document.write('<br>');document.write('<br>');
+    document.write('<br>');
+    document.write('<br>');document.write('<br>');
+    document.write('<br>');
+    document.write('<br>');document.write('<br>');
+    document.write('<br>');
+    document.write('<br>');document.write('<br>');
+    document.write('<br>');
+    document.write('<br>');document.write('<br>');
+    document.write('<br>');
+    document.write('<br>');
+    clock();
+    document.write('<br>');
+    document.write('<br>');
+    document.write('<br>');document.write('<br>');
+    document.write('<br>');
+    document.write('<br>');document.write('<br>');
+    document.write('<br>');
+    document.write('<br>');document.write('<br>');
+    document.write('<br>');
+    document.write('<br>');document.write('<br>');
+    document.write('<br>');
+    document.write('<br>');document.write('<br>');
+    document.write('<br>');
+    document.write('<br>');
+
+
+
+
+    document.write('<br>');
+    document.write('<br>');
+    document.write('<br>');document.write('<br>');
+    document.write('<br>');
+    document.write('<br>');document.write('<br>');
+    document.write('<br>');
+    document.write('<br>');document.write('<br>');
+    document.write('<br>');
+    document.write('<br>');document.write('<br>');
+    document.write('<br>');
+    document.write('<br>');document.write('<br>');
+    document.write('<br>');
+    document.write('<br>');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    function print(a) {
+      document.write(`${a}<br>`);
+    }
+
+
+
+    print(today+'<br>');
+    print(today.getFullYear()+' getFullYear() 메서드는 현재의 연도를 알려줍니다.');
+    print(today.getDate()+' getDate() 메서드는 현재의 날짜를 알려줍니다.');
+    print(Number(today.getMonth()+1)+' getMonth() 메서드는 현재의 월(0-11)을 알려줍니다. 출력 시 +1 필요');
+    print(today.getDay()+' getDay() 메서드는 현재의 요일(0-6)을 알려줍니다.');
+    print(today.getHours()+' getHours() 메서드는 현재의 시간을 알려줍니다.');
+    print(today.getMinutes()+' getMinutes() 메서드는 현재의 분을 알려줍니다.');
+    print(today.getSeconds()+' getSeconds() 메서드는 현재의 초를 알려줍니다.');
+    print(today.getMilliseconds()+' getMilliseconds() 메서드는 현재의 밀리초를 알려줍니다.');
+    
+
+
+    document.write('<br>');
+    document.write('<br>');
+    document.write('<br>');
+
+
+    let yoil = today.getDay();
+    document.write('오늘의 요일은 (');
+    switch (yoil) {
+      case 0 : document.write(`일`); break;
+      case 1 : document.write(`월`); break;
+      case 2 : document.write(`화`); break;
+      case 3 : document.write(`수`); break;
+      case 4 : document.write(`목`); break;
+      case 5 : document.write(`금`); break;
+      default : document.write(`토`); break;
+    }
+    document.write(')요일 입니다.');
+    document.write('<br>');
+    document.write('<br>');
+    document.write('<br>');
+
+
+
+
+
+    // 배열 이용하기
+    let yoil2 = ['(일)','(월)','(화)','(수)','(목)','(금)','(토)'];
+    document.write('오늘의 요일은 ' +yoil2[yoil]+'요일 입니다.');
+
+
+
+
+
+
+
+
+
+
+
+
+  </script>
+  
+</body>
+</html>

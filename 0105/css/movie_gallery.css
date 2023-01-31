@@ -1,0 +1,74 @@
+@charset "utf-8";
+
+
+
+
+
+*{                          /* 전체 여백 제거 */
+  margin : 0; padding : 0;
+}
+
+ul, ol, li {                
+  list-style : none;
+}
+
+h2 {
+  padding : 30px; text-align : center;
+}
+
+
+
+
+
+
+
+.gallery {                  /* 최상위 부모*/
+  width : 1200px;
+  border : 3px solid #000;
+  margin : 0 auto;
+}
+
+
+
+.gallery img{           /* 갤러리 안의 이미지들(전체) 서식 */
+  width : 100%;         /* 사진의 가로길이를 부모의 크기만큼으로 정함 */
+  object-fit : cover;  /* 사진을 정한 길이에 적절하게 조절 (가로)*/
+}
+
+
+.gallery .lnb {           /* 서브이미지 감싸는 ul */
+  display : flex;         /* 서브이미지들 가로로 정렬 */
+}
+
+
+
+/* 첫 번째 article 끝 */
+
+
+
+
+#big_img {        /* 두 번째 article 큰 이미지 영역 */
+  position : relative;
+}
+
+#big_img i.fas{
+  position : absolute;
+  top : 47%;
+  color : #fff;
+  background-color : rgba(0,0,0,.7);
+  padding : 12px 10px;
+  font-size : 40px;
+  cursor : pointer;
+}
+
+i.fa-angle-left{left : 0px;}
+i.fa-angle-right{ right : 0px;}
+
+#page {
+  position : absolute;
+  right : 0;
+  bottom : 0;
+  color : #fff;
+  background-color : rgba(0,0,0,.8);
+}
+

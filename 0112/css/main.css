@@ -1,0 +1,188 @@
+@charset "utf-8";
+
+body {
+  font-family : "맑은고딕", arial, sans-serif;
+  font-size : 12px;
+  color : #333;
+}
+
+/* overflow-x : hidden; */
+
+
+
+
+
+a {
+  color : #333;
+}
+header {
+  width : 100%;
+  border-top : 3px solid #ff7c98;
+  background-image : url('../images/bg_header.gif');
+}
+
+#h_top, nav {
+  width : 1200px;
+  margin : 0 auto;
+}
+
+#h_top h1 {
+  width : 92px;
+  height : 92px;
+  margin : 0 auto;
+  padding : 15px 0;
+}
+
+
+#h_bottom {
+  width : 100%;
+  height : 46px;
+  border-top : 1px solid #ccc;
+  border-bottom : 1px solid #333;
+  background-color : #fff;
+  overflow : hidden;
+  position : absolute;     /* 고친 부분 */
+  z-index : 10;
+}
+
+#h_bottom::after {
+  border-bottom : 1px solid rgb(51,51,51,0);
+  content : "";
+  display : block;
+  transition : 1s;
+
+  position : absolute;    /* 바꾼 부분 */
+  width : 100%;
+  top : 46px;
+}
+
+
+
+#h_bottom:hover::after {
+  border-bottom : 1px solid rgb(51,51,51,1);
+}
+
+
+#h_bottom nav {
+  display : flex;
+  justify-content : space-between;
+}
+
+.lnb, .gnb {
+  display : flex;
+  justify-content : center;
+}
+
+nav a {
+  text-transform : uppercase;
+}
+
+.lnb {
+  width : 200px;
+}
+
+.lnb > li {
+  padding : 0 18px;
+  line-height : 46px;
+  text-align : center;
+}
+
+.lnb > li > a {
+  font-size : 13px;
+  font-weight : bold;
+  color : #aaa;
+}
+
+.lnb > li:first-child a {
+  color : #ff7c98;
+}
+
+.gnb {
+  width : 1000px;
+}
+
+.gnb > li {
+  width : 170px;
+  line-height : 46px;
+  text-align : center;
+  position : relative;
+}
+
+.gnb > li > a {
+  font-size : 13px;
+  font-weight : bold;
+  color : #3c0a0a;
+}
+
+
+/* 서브메뉴 서식 */
+
+
+.sub {
+  position : absolute;
+  width : 100%;
+  padding-top : 10px;
+  display : hidden;
+
+}
+
+.sub li {
+  line-height : 46px;
+}
+
+.sub li:hover a {
+  color : #ff7c98;
+}
+
+
+/* 메인 서식 */
+
+main{
+  padding-top : 46px;
+}
+
+.slide{
+  width : 1600px;
+  height : 697px;
+  margin : 0 auto;
+  position : relative;
+}
+
+.slide > ul {
+  display : flex;
+  width : 8000px;
+  
+}
+
+.slide > ul > li {
+  width : 1600px;
+  height : 697px;
+}
+
+.slide i.fas {
+  cursor : pointer;
+  width : 60px; height : 60px;
+  position : absolute;
+  font-size : 60px;
+  font-weight : bold;
+  border-radius : 50%;
+  border: 10px solid rgba(51,51,51,.8);
+  color : rgba(51,51,51,.5);
+  line-height : 60px;
+  text-align : center;
+  top : 50%;
+  /* transform : translateY(-50%); */
+}
+.slide i.fas:hover {
+  color : rgba(255,255,255,.5);
+  border-color : rgba(255,255,255,.5);
+}
+
+
+.slide i.fa-angle-left {
+  left : 5px;
+}
+
+.slide i.fa-angle-right {
+  right : 5px;
+}

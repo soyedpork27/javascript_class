@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>01_변수</title>
+</head>
+<body>
+  <p>변하는 데이터를 저장하기 위한 메모리 공간</p>
+  <p>변수는 한번에 하나의 데이터만 담을 수 있다.</p>
+
+  <p>전역, 지역 변수가 있다</p>
+  <p>var, let, const</p>
+  <p>변수명 작성시 규칙에 의해 작성한다</p>
+
+  <h3>예제 1. 사용자가 입력한 이름과 지역명을 변수에 담아 내용 출력</h3>
+  
+  <script>
+    // let name, region ;
+    // name = prompt('이름을 입력해주세요') ;
+    // region = prompt('사는 지역을 입력해주세요');
+
+    // document.write(`${name}이/가 사는 지역은 ${region}입니다.`);
+
+// 입력하신 id 는 000 이고, pw는 000입니다.
+
+    // let id, pw;
+    // id = prompt('id를 입력해주세요');
+    // pw = prompt('패스워드를 입력해주세요');
+
+    // document.write(`<p id="ll">입력하신 id는 ${id}이고 pw는 ${pw} 입니다.</p>`);
+
+    // document.getElementById(`ll`).style.backgroundColor='#ff0';
+    // document.getElementById(`ll`).style.color='#f00';
+
+
+    let birthYear, current, age;
+    current=2022;
+    birthYear=prompt(`태어난 연도를 입력해주세요`);
+    age = current-birthYear+1;
+
+    document.write(`당신의 나이는 ${age}세 입니다.`);
+
+
+    let a = 5;
+    what= typeof a;
+    document.write(`${what}}`);
+    
+
+  </script>
+  
+</body>
+</html>

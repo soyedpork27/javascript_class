@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>배너 가리기</title>
+
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+  <style>
+    *{margin : 0 ; padding : 0;}
+
+    div {
+      display : flex;
+    }
+    div > a{
+      width : 95%;
+    }
+    #banner_img {
+      width : 100%;
+      display : block;
+    }
+
+
+    .fa-solid {
+      display : block;
+      width : 5%;
+      height : 100%;
+      font-size : 100px;
+      text-align : center;
+      background-color : #ccc;
+      cursor : pointer;
+    }
+
+  </style>
+
+
+  <script>
+    $('document').ready(function(){
+      
+      let close_btn = $('.fa-solid');
+
+      close_btn.click(function(){
+        $('#top_banner').slideUp();
+      });
+
+
+
+
+
+
+
+
+    });
+
+
+  </script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+</head>
+<body>
+
+
+  <div id="top_banner"> 
+    <a href="javascript:void(0);"><img src="./images/coupang_02.jpg" alt="쿠팡 배너" id="banner_img"></a><i class="fa-solid fa-xmark"></i></div>
+
+  <header>
+    헤더영역 콘텐츠들 <br>
+    입니다.
+  </header>
+
+
+
+
+  
+</body>
+</html>

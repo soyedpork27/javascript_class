@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>01_문서객체모델_내용수정_삽입하기</title>
+  <style>
+    #clock{
+      font-size : 30px;
+      color : #00f;
+      background-color : #ff0;
+    }
+    span {
+      color : #f00;
+      font-weight : bold;
+    }
+  </style>
+
+
+
+</head>
+<body>
+  <h2>01_문서객체모델_내용수정_삽입하기</h2>
+  <p>웹 문서의 요소를 선택하여 내용을 삽입하거나 수정할 수 있다.</p>
+  <ul>
+    <li>요소명.innerText=`내용`;  텍스트만 삽입 가능</li>
+    <li>요소명.innerHTML=`내용` : 요소 삽입 가능; </li>
+  </ul>
+  <h3>
+    버튼을 클릭하면 현재 시각을 #clock 요소에 표시하기
+  </h3>
+
+  <div id="clock">아래 버튼 클릭 시 이곳에 헌재 시각이 표시됩니다.</div>
+  <input type="button" value="innerText 속성으로 시간 표시하기" onclick="innerTxt()">
+  <input type="button" value="innerHTML 속성으로 시간 표시하기" onclick="innerHtml()">
+
+  
+
+
+
+  <script>
+
+    const a = new Date();
+
+    let h = a.getHours();
+    let m = a.getMinutes();
+    let s = a.getSeconds();
+
+
+
+    function innerTxt(){
+    document.getElementById('clock').innerText=`${h} : ${m} : ${s}`;
+    }
+    
+
+    function innerHtml(){
+    document.getElementById('clock').innerHTML=`<span>${h} : ${m} : ${s}</span>`;
+    }
+    
+
+
+    console.log(a.getMinutes())
+  </script>
+
+</body>
+</html>

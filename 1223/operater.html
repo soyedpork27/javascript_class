@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>01자바스크립트 연산자</title>
+  <script>
+
+    //1. 산술연산자
+
+    let a = 10;
+    let b = 5;
+
+    let result = a+b;
+    document.write(result + '<br>');
+
+    result = a%b;
+    document.write(result + '<br>');
+
+
+
+    //2. 비교연산자 = 결과값이 불리언
+
+    result = a>b; //
+    document.write(result + '<br>');
+
+    result = a < b ; 
+    document.write(result + '<br>');
+
+    result = a==b;
+    document.write(result + '<br>');
+
+
+
+    //3. 대입연산자 a = b, a+=b, a-=b
+
+    result=a=b;
+    document.write(result +'<br>');
+
+    result = a+=b;
+    document.write(result + '<br>');
+
+
+
+
+    //4. 증감연산자 : ++(1씩 증가), --(1씩 감소)
+
+    result = ++a;
+    document.write(result + '<br>');
+
+    // ++ 기호를 앞에 작성시 1을 먼저 더하고 출력
+
+    // ++ 기호를 뒤에 작성시 출력 후 1을 더한다
+
+    //5. 논리연산자 : &&(and), ||(or), !=(not)
+    alert((1>2)&&(1<2)); // 둘 다 만족하는 경우에만 true
+
+    alert((1>2)||(1<2)); // 둘 중 하나만 만족해도 true
+
+
+    //6. 문자 결합 연산자 : +
+    let c, d;
+    c = '웹퍼블리셔'; //문자
+    d = '프론트엔드'; //문자
+
+    e = 20221128; //숫자
+    f = 1;
+    document.write(c + d + e + '<br>');
+    document.write(e+f+'<br>');
+
+    //7. 상향조건 연산자 조건식?실행문1:실행문2;
+    //예 1>2?"조건식이 맞습니다.":"조건식이 맞지 않습니다.";
+
+    //프롬프트를 사용하여 사용자가 아이디를 직접 입력하도록 한다.
+
+    let id=prompt('아이디를 입력하세요');
+    let pw=prompt('패스워드를 입력하세요');
+    id=='jeon'&&pw==String(1234)?document.write('로그인 성공'):document.write('로그인 실패 <br>');
+
+
+    document.write('<br>'+String(e+f));
+
+
+
+
+  </script>
+</head>
+<body>
+  <h2>01자바스크립트 연산자</h2>
+  <p>자바스크립트 연산자는 사용자가 조건식을 만들어 원하는 결과를 출력하고자 할 때 사용하는 기호이다.</p>
+
+  <ul>
+    <li>산술연산자 : +, -, *, /, %(나머지)</li>
+    <li>문자열 결합연산자 : +(문자 + 문자), (문자 + 숫자)</li>
+    <li>비교연산자 : >, &lt;, >=, &lt;=, ==, ===(데이터 형식까지 같은지 판별) </li>
+    <li>대입연산자 : =, +=, -=</li>
+    <li>증감연산자 : ++(1씩 증감), --(1씩 감소)</li>
+    <li>논리연산자 : &&, ||, !=(같지 않다)  </li>
+    <li>상향조건연산자 : 조건식? 참일 때 값 : 거짓일 때 값;</li>
+    <li>타입연산자 : typeof (데이터의 형식을 체크해 준다)</li>
+  </ul>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>02_문서객체모델_속성(attribute)변경</title>
+
+
+
+  <style>
+    #img_box {
+
+    }
+
+
+
+    #main_img{
+      width : 150px;
+      height : 150px;
+    }
+
+
+
+  </style>
+</head>
+<body>
+  <h2>02_문서객체모델_속성(attribute)변경</h2>
+  <p>웹 문서에서 요소를 삽입할 때 속성을 사용하여 입력하는 경우가 있다.</p>
+  <p>자바스크립트 에서 사용자가 선택한 태그요소의 속성을 선택하고 설정을 변경하는 방법에 대해 알아본다.</p>
+
+
+  <ul>
+    <li>getAttribute('속성명') : </li>
+
+    <li>setAttribute('속성명','값') : </li>
+  </ul>
+
+
+  <img src="./pic_bulboff.gif" alt="전구 사진" id="bulb"><br><br>
+
+
+
+<!-- ./images2/photo01.jpg -->
+<!-- ./images2/photo02.jpg -->
+<!-- ./images2/photo03.jpg -->
+<!-- ./images2/photo04.jpg -->
+<!-- ./images2/photo05.jpg -->
+
+
+
+
+
+
+
+
+
+  <section id="img_box">
+    <img src="./images2/photo01.jpg" alt="메인이미지" id="main_img">
+    <img src="./images2/photo02.jpg" alt="서브이미지1" class="sub_img">
+    <img src="./images2/photo03.jpg" alt="서브이미지2" class="sub_img">
+    <img src="./images2/photo04.jpg" alt="서브이미지3" class="sub_img">
+    <img src="./images2/photo05.jpg" alt="서브이미지4" class="sub_img">
+  </section>
+
+  
+
+  <script>
+    let b = document.getElementById('bulb');
+
+    let img_src = b.getAttribute('src');
+
+
+    b.addEventListener('click',function(){
+      if (this.getAttribute('src') == './pic_bulboff.gif'){
+        this.setAttribute('src','./pic_bulbon.gif');
+      }
+      else {
+        this.setAttribute('src','./pic_bulboff.gif');
+      }
+    }
+    );
+
+
+
+
+
+
+  </script>
+</body>
+</html>
