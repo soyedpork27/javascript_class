@@ -6,6 +6,8 @@
   --bg-color01 : #d63384;
 
   --tx-color01 : #333;
+
+  --tx-color02 : #ff0;
 }
 
 
@@ -44,6 +46,8 @@ header > h1 {
 .gnb{
   position : absolute;
   top : 10px;
+  left : 40%;
+  width : 800px;
   display : flex;
   justify-content : space-around;
 
@@ -59,6 +63,21 @@ header > h1 {
   line-height : 60px;
   font-size : 20px;
   text-transform : capitalize;
+  transition : .3s;
+}
+
+
+
+.gnb > li > a:hover {
+  color : var(--tx-color02);
+  font-size : 24px;
+  font-weight : bold;
+}
+
+.t_act {
+  color : var(--tx-color02) !important;
+  font-size : 24px !important;
+  font-weight : bold !important;
 }
 
 

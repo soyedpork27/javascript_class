@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>라면정보 입력</title>
+</head>
+<body>
+  <h2>라면정보 자료입력화면</h2>
+  <form name="noddle" method="POST" action="db_noddle_data_insert.php">
+    <fieldset>
+      <legend>라면 정보 입력</legend>
+      <p>
+        <label for="p_title">라면 이름</label>
+        <input type="text" name="name" id="p_title" placeholder="라면 이름을 입력하세요" required>
+      </p>
+      <p>
+        <label for="p_company">회사명</label>
+        <input type="text" name="company" id="p_company" placeholder="회사 이름을 입력하세요" required>
+      </p>
+      <p>
+        <label for="p_kind">종류</label>
+        <select name="kind" id="p_kind">
+          <option value="">라면종류 선택</option>
+          <option value="M">일반라면</option>
+          <option value="C">컵라면</option>
+        </select>
+      </p>
+      <p>
+        <label for="p_price">가격</label>
+        <input type="number" name="price" id="p_price" placeholder="가격을 입력하세요" required>
+      </p>
+      <p>
+        <label for="p_edate">유통기한</label>
+        <input type="date" name="e_date" id="p_edate" placeholder="유통기한을 입력하세요" required>
+      </p>
+      <p>
+        <button type="submit">데이터 입력 완료</button>
+        <button type="reset">다시쓰기 또는 입력취소</button>
+      </p>
+
+
+
+    </fieldset>
+  </form>
+
+
+</body>
+</html>
