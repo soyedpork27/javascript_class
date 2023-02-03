@@ -1,6 +1,69 @@
 @charset "utf-8";
 
-body { background-color : #ff0; }
+
+:root {
+  --t-color01 : #333;
+  --t-color02 : #fff;
+  --t-color03 : #066aad;
+  --bg-color01 : #006eff;
+  --bg-color02 : #212772;
+  --bg-color03 : #fff;
+}
+
+
+header{
+  width : 100%;
+  height : 70px;
+  position : fixed;
+  top : 0;
+  left : 0;
+  z-index : 1000;
+}
+
+header h1 {
+  padding : 24px 0 0 2%;
+}
+
+header i.fas {
+  position : absolute;
+  top : 24px;
+  font-size : 1.6rem;
+  color : var(--t-color02);
+  cursor : pointer;
+}
+
+header i.fa-user{
+  right : 4%;
+}
+header i.fa-bell {
+  right : 2%;
+}
+
+header nav{
+  width : 600px;
+  margin : -24px auto 0 auto;
+}
+
+header .gnb{
+  display : flex;
+  justify-content : space-around;
+}
+
+header .gnb > li > a {
+  font-size : 1.2rem;
+  color : var(--t-color02);
+}
+
+/* 화면이 스크롤 되면 적용되는 서식 */
+/* nav a 에 적용, 알람, 로그인 아이콘 적용 */
+.on {
+  color : var(--t-color01) !important;
+}
+
+.h_on {
+  background-color : rgba(255,255,255,.7) !important ;
+}
+
 
 #m_nav {
 }
@@ -15,8 +78,7 @@ body { background-color : #ff0; }
   gap : 20px;
   width : 50px;
   height : 330px;
-
-
+  z-index : 1000;
 }
 
 
@@ -123,4 +185,115 @@ body { background-color : #ff0; }
   font-size : 20px;
   width : 227px;
   background-color : rgba(0,0,0,.6);
+}
+
+
+/* section#top3 서식 */
+
+#top3 {
+  text-align : center;
+}
+
+#top3 > h2 {
+padding-top : 50px;
+font-size : 2.5rem;
+}
+
+#top3 > .title {
+  padding-top : 15px;
+}
+
+#top3 > .title > h3 {
+  font-weight : 500;
+  font-size : 1rem;
+
+}
+
+.content {
+  padding-top : 100px;
+}
+
+.content ul {
+  display : flex;
+}
+
+.content > ul {
+  width : 180%;
+  height : 70%;
+}
+
+.content > ul > li {
+  width : 60%;
+
+}
+.content > ul > li h4 {
+  font-size : 1.7rem;
+  padding : 30px 0 45px 0;
+  font-weight : 600;
+  color : var(--t-color03)
+}
+
+.content > ul > li > p img {
+  width : 250px;
+}
+
+.txt_list {
+  justify-content : center;
+  padding-top : 50px;
+}
+.txt_list li {
+  display : flex;
+  width : 140px;
+  padding : 5px 20px ;
+  text-align : left;
+  align-items : center;
+}
+.txt_list li img {
+  width : 50px;
+  height : 30px;
+  padding-right : 10px;
+}
+
+.txt_list li dl {
+  font-size : .9rem;
+  font-weight : 600;
+  color : var(--t-color01);
+}
+
+.emp_price {
+  color : var(--t-color03);
+  font-size : 1.5rem;
+  margin-right : 2px;
+}
+
+.txt_list li dl dt {
+  margin-bottom : 10px;
+}
+
+.txt_list li:nth-child(2), .txt_list li:nth-child(3), .txt_list li:last-child {
+  border-left : 2px solid #bbb;
+}
+
+
+
+.rank {
+  display : inline-block;
+  border : 2px solid var(--t-color03);
+  color : var(--t-color03);
+  font-size : 1rem;
+  width : 55px;
+  height : 23px;
+  border-radius : 15px;
+  line-height : 23px;
+
+}
+
+#top3 a[title="견적내기"]{
+  display : inline-block;
+  margin-top : 50px;
+  width : 150px;
+  height : 35px;
+  border : 2px solid var(--t-color01);
+  font-size : .8rem ;
+  line-height : 35px;
 }
