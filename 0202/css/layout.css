@@ -297,3 +297,28 @@ font-size : 2.5rem;
   font-size : .8rem ;
   line-height : 35px;
 }
+
+.swiper {
+  position : relative;
+  width : 
+}
+
+.swiper-wrapper {
+  position : relative;
+  margin : 0 auto;
+  left : 390px;
+}
+
+.swiper-slide:last-child {
+  padding-right : 390px;
+}
+
+.swiper-button-next, .swiper-button-prev, .swiper-pagination {
+  position : absolute;
+}
+.swiper-button-next {
+  left : 30%;
+}
+
+.swiper-button-prev {}
+.swiper-pagination {}
