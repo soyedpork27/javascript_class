@@ -211,6 +211,7 @@ font-size : 2.5rem;
 
 .content {
   padding-top : 100px;
+  height : 600px;
 }
 
 .content ul {
@@ -290,35 +291,25 @@ font-size : 2.5rem;
 
 #top3 a[title="견적내기"]{
   display : inline-block;
-  margin-top : 50px;
   width : 150px;
   height : 35px;
+  margin-top : 10px;
   border : 2px solid var(--t-color01);
   font-size : .8rem ;
   line-height : 35px;
 }
 
-.swiper {
-  position : relative;
-  width : 
-}
 
 .swiper-wrapper {
   position : relative;
-  margin : 0 auto;
-  left : 390px;
+  margin : 30px auto;
 }
 
-.swiper-slide:last-child {
-  padding-right : 390px;
-}
-
-.swiper-button-next, .swiper-button-prev, .swiper-pagination {
-  position : absolute;
-}
 .swiper-button-next {
-  left : 30%;
+  margin-right : 250px;
 }
 
-.swiper-button-prev {}
+.swiper-button-prev {
+  margin-left : 250px;
+}
 .swiper-pagination {}

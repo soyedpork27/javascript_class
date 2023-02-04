@@ -34,9 +34,8 @@
 <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 
 <!-- Swiper CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
-<!-- Swiper JS -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+
 
 </head>
 <body>
@@ -209,6 +208,13 @@
     <!-- Initialize Swiper -->
     <script>
       let swiper = new Swiper(".mySwiper", {
+
+        // 슬라이드 시작 부분 여백
+        slidesOffsetBefore : 390,
+
+        // 슬라이드 마지막 부분 여백
+        slidesOffsetAfter : 390,
+
         slidesPerView: 1.7,
         spaceBetween: 0,
         keyboard: {
