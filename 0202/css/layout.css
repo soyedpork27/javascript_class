@@ -5,9 +5,14 @@
   --t-color01 : #333;
   --t-color02 : #fff;
   --t-color03 : #066aad;
+
   --bg-color01 : #006eff;
   --bg-color02 : #212772;
   --bg-color03 : #fff;
+
+  --f-size : 14px;
+  --f-size01 : 16px;
+
 }
 
 
@@ -199,6 +204,15 @@ padding-top : 50px;
 font-size : 2.5rem;
 }
 
+.m_title {
+  font-size: 34px;
+  text-align : center;
+  font-weight : bold;
+  padding : 80px 0 10px 0;
+  color : #000;
+  z-index : 2;
+}
+
 #top3 > .title {
   padding-top : 15px;
 }
@@ -297,6 +311,12 @@ font-size : 2.5rem;
   border : 2px solid var(--t-color01);
   font-size : .8rem ;
   line-height : 35px;
+  transition : .5s;
+}
+
+#top3 a[title="견적내기"]:hover {
+  background-color : #333;;
+  color : #fff;
 }
 
 
@@ -313,3 +333,86 @@ font-size : 2.5rem;
   margin-left : 250px;
 }
 .swiper-pagination {}
+
+
+
+
+
+
+
+
+#intro {
+  position : relative;
+  height : 950px !important;
+  overflow : hidden;
+}
+
+#intro h2 {
+  width : 100%;
+  text-align : center;
+}
+
+#intro p, #intro h2 {
+  position : absolute;
+}
+
+#intro .l_title{
+  left : 50px;
+  top : 180px;
+  text-align : left;
+}
+#intro .r_title{
+  right : 50px;
+  bottom : 200px;
+  text-align : right;
+}
+
+.l_title, .r_title {
+  font-size : 26px;
+  font-weight : bold;
+  line-height : 30px;
+}
+
+
+.slide_wrap {
+  width : 1000px;
+  height : 343px;
+  margin : 0 auto;
+  position : relative;
+  border : 3px solid #333;
+  overflow : hidden;
+  margin-top : 100px;
+}
+.slide_wrap i.fas {
+  position : absolute;
+  top : 50%;
+  transform : translateY(-50%);
+  font-size : 30px;
+  color : #000;
+  display : inline-block;
+  background-color : rgba(200,200,200,.5);
+  padding : 5px 15px;
+  cursor : pointer;
+}
+
+.slide_wrap i.fas:hover {
+  background-color : rgba(0,0,0,.4);
+  color : #fff;
+}
+.slide_wrap i.fa-angle-left {
+  left : 15px;
+}
+.slide_wrap i.fa-angle-right {
+  right : 15px;
+}
+
+
+.slide_banner {
+  display : flex;
+  transition : .5s;
+}
+
+.slide_banner img {
+  width : 1000px;
+  height : 343px;
+}

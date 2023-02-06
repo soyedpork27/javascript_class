@@ -82,3 +82,77 @@ $(document).ready(function(){
   });
 
 });
+
+
+const slide = document.querySelector('.slide_banner');
+
+const slide_li = document.querySelectorAll('.slide_banner li');
+
+const slide_w = 1000;
+
+let Timer = setInterval(moveLeft,4000);
+
+let n = 0;
+
+// 왼쪽으로 움직이는 함수
+function moveLeft(){
+  if ( n == 3){
+    n=0;
+  }
+  else{
+    n++;
+  }
+  slide.style.marginLeft=`${-slide_w*n}px`;
+
+  
+  // for (let i = 0 ; i<4 ; i++ ){
+  //   slide_li[i].setAttribute('class','');
+  // }
+  slide_li.classList.remove('on');
+  // slide_li[n].setAttribute('class','on');
+  slide_li[n].classList.add('on')
+}
+
+// 오른쪽으로 움직이는 함수
+function moveRight(){
+  switch(n) {
+    case 0 : n=3; break;
+    case 1 : n=0; break;
+    case 2 : n=1; break;
+    case 3 : n=2; break;
+  }
+  slide.style.marginLeft=`${-slide_w*n}px`;
+  
+  // for (let i = 0 ; i<4 ; i++ ){
+  //   slide_li[i].setAttribute('class','');
+  // }
+  slide_li.classList.remove('on');
+  // slide_li[n].setAttribute('class','on');
+  slide_li[n].classList.add('on')
+
+}
+
+// 왼쪽 버튼 클릭 이벤트
+document.querySelector('.fa-angle-left').addEventListener('click',moveRight);
+
+// 오른쪽 버튼 클릭 이벤트
+document.querySelector('.fa-angle-right').addEventListener('click',moveLeft);
+
+// 배너 마우스 엔터 시 이벤트
+document.querySelector('.slide_wrap').addEventListener('mouseover',function(){
+  clearInterval(Timer);
+});
+
+// 배너 마우스 아웃 시 이벤트
+document.querySelector('.slide_wrap').addEventListener('mouseout',function(){
+  clearInterval(Timer);
+  Timer = setInterval(moveLeft,4000);
+});
+
+
+
+
+
+
+
+

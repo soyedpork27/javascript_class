@@ -8,7 +8,13 @@
   --t-color02 : #fff;
   --t-color03 : #066aad;
   --bg-color01 : #006eff;
-  --bg-color01 : #212772;
+  --bg-color02 : #212772;
+  --bg-color03 : #fff;
+
+  --f-size : 14px;
+  --f-size01 : 16px;
+
+
 }
 
 
@@ -28,4 +34,18 @@ a {
 
 .hidden {
   display : none;
+}
+
+
+/* 더보기버튼 */
+.more_btn {
+  font-size : var(--f-size);
+  border : 1px solid #333;
+  padding : 10px 30px;
+  transition : .5s;
+}
+
+.more_btn:hover {
+  background-color : var(--bg-color01);
+  color : var(--t-color02);
 }
