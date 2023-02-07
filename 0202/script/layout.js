@@ -105,12 +105,12 @@ function moveLeft(){
   slide.style.marginLeft=`${-slide_w*n}px`;
 
   
-  for (let i = 0 ; i<4 ; i++ ){
-  //   slide_li[i].setAttribute('class','');
-  slide_li.classList.remove('on');
-  }
-  // slide_li[n].setAttribute('class','on');
-  slide_li[n].classList.add('on');
+  // for (let i = 0 ; i<4 ; i++ ){
+  // //   slide_li[i].setAttribute('class','');
+  // slide_li.classList.remove('on');
+  // }
+  // // slide_li[n].setAttribute('class','on');
+  // slide_li[n].classList.add('on');
 }
 
 // 오른쪽으로 움직이는 함수
@@ -123,12 +123,12 @@ function moveRight(){
   }
   slide.style.marginLeft=`${-slide_w*n}px`;
   
-  for (let i = 0 ; i<4 ; i++ ){
-  //   slide_li[i].setAttribute('class','');
-  slide_li[i].classList.remove('on');
-  }
-  // slide_li[n].setAttribute('class','on');
-  slide_li[n].classList.add('on');
+  // for (let i = 0 ; i<4 ; i++ ){
+  // //   slide_li[i].setAttribute('class','');
+  // slide_li[i].classList.remove('on');
+  // }
+  // // slide_li[n].setAttribute('class','on');
+  // slide_li[n].classList.add('on');
 
 }
 

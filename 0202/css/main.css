@@ -241,3 +241,224 @@ main > section {}
 .ctrl_btn01 li.on {
   background-color : var(--t-color03);
 }
+
+
+
+
+/* 구매안내 창 */
+#buy {
+  text-align : center;
+}
+#buy h3 {
+  font-size : 24px;
+  font-weight : 500;
+  text-align : center;
+  padding : 60px 0 50px 0;
+}
+
+.t_color03{
+  color : var(--t-color03);
+}
+
+#buy ul {
+  width : 1000px;
+  margin : 30px auto;
+  display : flex;
+  justify-content : space-around;
+  flex-wrap : wrap;
+}
+
+#buy ul > li {
+  width : 33.3%;
+  margin-bottom : 60px;
+  text-align : center;
+}
+
+#buy > ul > li h4 {
+  font-size : 16px;
+  font-weight : bold;
+}
+
+#buy ul > li img {
+  width : 70px;
+  padding : 15px 0;
+
+}
+
+.p03 {
+  line-height : 20px;
+}
+
+iframe {
+  width : 1000px;
+  height : 562px;
+  border : none;
+}
+
+/* 고객지원 */
+
+#cs{
+  background-color : #ececec;
+}
+
+#cs > article {
+  width : 1200px;
+  margin : 0 auto;
+  background-color : #fff;
+  padding-bottom : 40px;
+}
+
+.clear::after {
+  display : block;
+  content : "";
+  clear : both;
+}
+
+#cs article h3 {
+  font-size : 18px;
+  text-align : center;
+  padding : 60px 0 20px 0;
+  font-weight : bold;
+}
+
+
+.ars_left, .ars_right {
+  width : 50%;
+  background-color : #fff;
+  padding : 20px 30px;
+  box-sizing : border-box;
+  float : left;
+  position : relative;
+  display : flex;
+  justify-content : center;
+  align-items : center;
+}
+
+.ars_left::after {
+  width : 1px;
+  height : 200px;
+  background-color : #ccc;
+  display : block;
+  content : "";
+  position : absolute;
+  right : 0px;
+  top :0px;
+}
+
+.cs_p {
+  width : 175px;
+  text-align : center;
+}
+
+.cs_p strong {
+  display : inline-block;
+  font-weight : 500;
+  font-size : var(--f-size01);
+  margin-bottom : 15px;
+}
+
+.link01 {
+  color : var(--t-color03);
+  line-height : 30px;
+}
+
+.link01::after {
+  content : ">";
+  color : var(--t-color03);
+}
+
+.car, .member {
+  display : inline-block;
+  width : 80px;
+  height : 46px;
+  background-image : url("../images/bg-support-ars.png");
+  text-indent : -9999px;
+}
+
+.car {
+  transform : translateY(50px);
+}
+
+.member {
+  width : 70px;
+  transform : translateY(20px);
+  background-position : 70px 0;
+}
+
+#cs dl{
+  padding-left : 20px;
+  line-height : 22px;
+}
+
+#cs dl > dt {
+  font-weight : bold;
+}
+
+#cs dl > dd {
+  color : #6d6d6d;
+}
+
+
+.cs_etc {
+  width : 1200px;
+  margin : 15px auto;
+  display : flex;
+  justify-content : space-between;
+}
+
+.cs_etc > li {
+  width : 330px;
+  height : 275px;
+  background-color : #fff;
+  padding : 0 60px 10px 60px;
+  text-align : center;
+  position : relative;
+}
+
+.cs_etc > li > h3 {
+  text-align : left;
+  font-weight : bold;
+  padding : 40px 0 20px 0;
+  font-size : 18px;
+}
+
+.cs_etc > li > p {
+  text-align : left;
+  line-height : 20px;
+}
+
+.cs_etc > li > p > span {
+
+}
+
+.cs_etc > li:last-child img {
+  padding-top : 18px;
+}
+
+
+
+.btn01{
+  background-color : var(--bg-color02);
+  color : #fff;
+  padding : 10px 30px;
+  position : absolute;
+  bottom : 40px;
+  left : 50%;
+  transform : translateX(-50%);
+}
+
+
+
+.ran_banner{
+  width : 1200px;
+  height : 300px;
+  margin : 50px auto;
+}
+
+.ran_banner img {
+  width : 1200px;
+  height : 300px;
+}
+
+
+

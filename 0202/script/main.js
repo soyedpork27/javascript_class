@@ -17,9 +17,6 @@ $('body').append(modal);
 // 쿠키 생성하기
 let ch = $('.modal #ch');
 
-
-
-
 // 쿠키 파일이 현재 브라우저에 존재한다면 모달 창이 안나오도록 한다.
 if($.cookie('popup')=='none') {
   $('.modal').hide();
@@ -40,4 +37,13 @@ $('.modal a').click(function(){
   closeModal();
 });
 
+
+
 });
+
+// 이벤트 배너 랜덤
+
+
+let random_n = Math.floor(Math.random() * (4-1) + 1);
+
+document.getElementById('eb').src=`./images/event_banner0${random_n}.avif`;

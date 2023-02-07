@@ -49,3 +49,89 @@ a {
   background-color : var(--bg-color01);
   color : var(--t-color02);
 }
+
+
+
+footer{
+  width : 100%;
+  background-color : #000;
+  color : #888;
+  font-size : 14px;
+  font-weight : 500;
+}
+
+footer .f_wrap {
+  width : 1200px;
+  background-color : #0e0d0d;
+  display : flex;
+  margin : 0 auto;
+  height : 180px;
+  padding : 30px 0 0 0;
+}
+
+.f_left_logo{
+  width : 200px;
+}
+.f_left_logo img {
+  padding : 0 25px;
+}
+
+.f_right_content{
+  width : 800px;
+}
+
+.f_flex {
+  display : flex;
+  flex-wrap : wrap;
+  margin-bottom : 20px;
+}
+
+.f_flex:last-of-type {
+  width : 900px;
+}
+
+.f_flex:first-of-type li {
+  padding : 3px 15px;
+  border-left : 2px solid #333;
+}
+
+.f_flex:first-of-type li:nth-child(2) a{
+  color : #dedede ;
+}
+
+.f_flex:last-of-type li {
+  padding : 6px 15px;
+
+}
+
+.f_flex li:first-child {
+  padding-left : 0;
+  border-left : 0;
+}
+
+.f_flex:last-of-type li:nth-child(5) {
+  padding-left : 0;
+
+}
+
+
+
+
+address {
+  font-style : normal;
+}
+
+footer a {
+  color : #888;
+  font-size : 14px;
+  font-weight : 500;
+}
+
+
+footer .f_flex li .f_show {
+  font-size : 10px !important;
+  font-weight : 200 !important;
+  color : #333 !important;
+
+}
+
